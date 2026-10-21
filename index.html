@@ -8,12 +8,11 @@
 </head>
 <body>
 <main>
-<h1>Range calculator</h1>
-<p class="sub">Pick a category and a multiplier. Search to filter the list.</p>
+<h1>Riven Stats calculator</h1>
 
-<h2>Category</h2>
+<h2>Weapon Type</h2>
 <div class="btns" id="cats"></div>
-<h2>Multiplier</h2>
+<h2>Stats Format</h2>
 <div class="btns" id="mults"></div>
 
 <div class="tools"><input type="search" id="q" placeholder="Search by name or number" aria-label="Search results"></div>
@@ -69,7 +68,7 @@ function makeGroup(parent, items, isOn, onPick){
 }
 makeGroup(cats, CATEGORIES.map(function(c){return {html:c};}),
   function(i){return CATEGORIES[i] === cat;}, function(i){cat = CATEGORIES[i];});
-makeGroup(mults, MULTS.map(function(m){return {html:m.label + "<small>" + m.value + "</small>"};}),
+makeGroup(mults, MULTS.map(function(m){return {html:m.label};}),
   function(i){return i === mult;}, function(i){mult = i;});
 q.oninput = render;
 
@@ -98,7 +97,6 @@ function render(){
   rows.forEach(function(r){
     var li = document.createElement("li");
     var a = document.createElement("span"); a.textContent = r.name;
-    var e = document.createElement("em"); e.textContent = "value " + r.value; a.appendChild(e);
     var b = document.createElement("span"); b.textContent = fmt(r.min) + " – " + fmt(r.max);
     li.appendChild(a); li.appendChild(b); list.appendChild(li);
   });
