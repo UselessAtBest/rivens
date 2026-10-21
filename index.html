@@ -4,35 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Range calculator</title>
-<style>
-:root{--bg:#f3f5f2;--surface:#fff;--ink:#1c2420;--muted:#66726b;--line:#d5dcd7;--accent:#1f6b52;--accent-ink:#fff;--soft:#dfeee7;
-box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#141a17;--surface:#1c2420;--ink:#e8eee9;--muted:#93a199;--line:#33403a;--accent:#5bc59c;--accent-ink:#0d1a14;--soft:#233a30;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#141a17;--surface:#1c2420;--ink:#e8eee9;--muted:#93a199;--line:#33403a;--accent:#5bc59c;--accent-ink:#0d1a14;--soft:#233a30;color-scheme:dark}
-*{box-sizing:border-box}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
-main{max-width:640px;margin:0 auto;padding:28px 18px 48px}
-h1{font-size:1.5rem;margin:0 0 4px;letter-spacing:-.01em}
-p.sub{margin:0 0 20px;color:var(--muted)}
-h2{font-size:.95rem;margin:20px 0 8px;color:var(--muted);font-weight:600}
-.btns{display:flex;flex-wrap:wrap;gap:8px}
-.btn{font:inherit;padding:9px 16px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);cursor:pointer;font-variant-numeric:tabular-nums}
-.btn small{color:var(--muted);margin-left:6px;font-size:.78rem}
-.btn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn[aria-pressed="true"] small{color:inherit;opacity:.85}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.tools{display:flex;gap:8px;margin:22px 0 12px}
-input[type=search]{flex:1;min-width:0;font:inherit;padding:10px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink)}
-.count{color:var(--muted);font-size:.85rem;margin:0 0 8px}
-ul{list-style:none;margin:0;padding:0;border:1px solid var(--line);border-radius:12px;background:var(--surface);overflow:hidden}
-li{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;border-top:1px solid var(--line)}
-li:first-child{border-top:0}
-li span:last-child{font-variant-numeric:tabular-nums;white-space:nowrap}
-li em{color:var(--muted);font-style:normal;font-size:.85rem;margin-left:8px}
-.empty{padding:18px 16px;color:var(--muted)}
-.err{color:#c0392b}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 <main>
@@ -61,12 +33,22 @@ var MULTS = [
 var LOW = 0.9, HIGH = 1.1, BASE = 1.2;
 
 // Loaded from data.json (same folder as this page).
+// Each entry: {"stat":"NAME","rifle":X,"shotgun":X,"pistol":X,"archgun":X,"melee":X}
 var DATA = [];
 
 var cat = CATEGORIES[0], mult = 0;
 var cats = document.getElementById("cats"), mults = document.getElementById("mults"),
     list = document.getElementById("list"), q = document.getElementById("q"),
     count = document.getElementById("count");
+
+// Finds the key matching the category name (e.g. "rifle") in a stat entry, ignoring letter case.
+function statValue(d, category){
+  var want = category.toLowerCase();
+  for(var k in d){
+    if(k.toLowerCase() === want && typeof d[k] === "number") return d[k];
+  }
+  return null;
+}
 
 function fmt(n){ return (Math.round(n * 100) / 100).toString(); }
 
@@ -93,9 +75,13 @@ q.oninput = render;
 
 function render(){
   var m = MULTS[mult].value, term = q.value.trim().toLowerCase(), num = parseFloat(term);
-  var rows = DATA.filter(function(d){ return d.category === cat; }).map(function(d){
-    return {name:d.name, value:d.value, min:d.value * LOW * BASE * m, max:d.value * HIGH * BASE * m};
-  }).filter(function(r){
+  var rows = [];
+  DATA.forEach(function(d){
+    var v = statValue(d, cat);
+    if(v === null) return; // null or missing for this weapon type: hide the stat
+    rows.push({name:d.stat, value:v, min:v * LOW * BASE * m, max:v * HIGH * BASE * m});
+  });
+  rows = rows.filter(function(r){
     if(!term) return true;
     if(r.name.toLowerCase().indexOf(term) > -1) return true;
     if(!isNaN(num) && num >= r.min && num <= r.max) return true;
@@ -121,7 +107,7 @@ function render(){
 fetch("data.json")
   .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
   .then(function(j){
-    DATA = j.filter(function(d){ return d && d.name && d.category && typeof d.value === "number"; });
+    DATA = j.filter(function(d){ return d && d.stat; });
     render();
   })
   .catch(function(err){
