@@ -1,0 +1,8 @@
+[
+  { "name": "Example Rifle 1",   "category": "Rifle",   "value": 1.0  },
+  { "name": "Example Rifle 2",   "category": "Rifle",   "value": 0.85 },
+  { "name": "Example Shotgun 1", "category": "Shotgun", "value": 1.2  },
+  { "name": "Example Pistol 1",  "category": "Pistol",  "value": 0.7  },
+  { "name": "Example Archgun 1", "category": "Archgun", "value": 1.1  },
+  { "name": "Example Melee 1",   "category": "Melee",   "value": 1.3  }
+]
