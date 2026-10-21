@@ -181,3 +181,14 @@ li em {
 .err {
     color: #c0392b
 }
+
+.btn.toggle-red {
+  border-color: #c0392b;
+  color: #c0392b;
+}
+
+.btn.toggle-red[aria-pressed="true"] {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: #fff;
+}
