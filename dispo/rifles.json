@@ -1,0 +1,890 @@
+[
+    {
+        "name": "Acceltra",
+        "number": 0.65,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Acceltra Prime",
+        "number": 0.55,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Afentis",
+        "number": 1.05,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Afentis Prime",
+        "number": 0.65,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Alternox Prime",
+        "number": 0.95,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Ambassador",
+        "number": 1.15,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Amprex",
+        "number": 0.85,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Argonak",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Attica",
+        "number": 1.42,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "AX-52",
+        "number": 0.85,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Battacor",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Baza",
+        "number": 1.05,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Baza Prime",
+        "number": 1.0,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Boltor",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "MK1-Braton",
+        "number": 1.35,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Braton",
+        "number": 1.35,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Braton Prime",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Braton Vandal",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Burston",
+        "number": 1.45,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Burston Prime",
+        "number": 1.35,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Buzlok",
+        "number": 1.45,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Catchmoon (primary)",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Cernos",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Rakta Cernos",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Cernos Prime",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Cinta",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Daikyu",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Daikyu Prime",
+        "number": 1.0,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Dera",
+        "number": 1.4,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Dera Vandal",
+        "number": 1.35,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Dread",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "EFV-5 Jupiter",
+        "number": 1.05,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Enkaus",
+        "number": 0.8,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Ferrox",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Tenet Ferrox",
+        "number": 1.15,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Fulmin",
+        "number": 1.0,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Fulmin Prime",
+        "number": 0.75,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Flux Rifle",
+        "number": 1.55,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Gaze (primary)",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Glaxion",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Glaxion Vandal",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Tenet Glaxion",
+        "number": 0.65,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Gorgon",
+        "number": 1.4,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Gorgon Wraith",
+        "number": 1.35,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Prisma Gorgon",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Gotva Prime",
+        "number": 0.85,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Grakata",
+        "number": 1.35,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Prisma Grakata",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Grinlok",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Prisma Grinlok",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Haalvu",
+        "number": 0.6,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Harpak",
+        "number": 1.55,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Hema",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Coda Hema",
+        "number": 1.0,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Higasa",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Hind",
+        "number": 1.42,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Kuva Hind",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Ignis",
+        "number": 0.7,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Ignis Wraith",
+        "number": 0.65,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Javlok",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Karak",
+        "number": 1.35,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Karak Wraith",
+        "number": 1.28,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Kuva Karak",
+        "number": 1.05,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Lanka",
+        "number": 1.05,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Latron",
+        "number": 1.4,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Latron Prime",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Latron Wraith",
+        "number": 1.35,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Lenz",
+        "number": 1.05,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Prisma Lenz",
+        "number": 1.0,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Miter",
+        "number": 1.5,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Mutalist Cernos",
+        "number": 1.35,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Mutalist Quanta",
+        "number": 1.5,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Nagantaka",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Nagantaka Prime",
+        "number": 1.15,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Nataruk",
+        "number": 0.65,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Nunchasa",
+        "number": 0.5,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Ogris",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Kuva Ogris",
+        "number": 0.7,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Opticor",
+        "number": 1.15,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Opticor Vandal",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Panthera",
+        "number": 1.4,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Panthera Prime",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Paracyst",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "MK1-Paris",
+        "number": 1.45,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Paris",
+        "number": 1.4,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Paris Prime",
+        "number": 1.35,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Penta",
+        "number": 1.35,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Carmine Penta",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Secura Penta",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Perigale",
+        "number": 1.15,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Perigale Prime",
+        "number": 0.8,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Phenmor",
+        "number": 0.6,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Proboscis Cernos",
+        "number": 0.9,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Quanta",
+        "number": 1.4,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Quanta Vandal",
+        "number": 1.4,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Tenet Quanta",
+        "number": 0.85,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Quartakk",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Kuva Quartakk",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Quellor",
+        "number": 1.15,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Rattleguts (primary)",
+        "number": 1.0,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Reconifex",
+        "number": 1.0,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Rubico",
+        "number": 0.95,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Rubico Prime",
+        "number": 0.7,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Scourge Prime",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Shedu",
+        "number": 0.75,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Simulor",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Snipetron",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Snipetron Vandal",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Soma",
+        "number": 1.15,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Soma Prime",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Sporelacer (primary)",
+        "number": 1.15,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Sporothrix",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Coda Sporothrix",
+        "number": 0.95,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Stahlta",
+        "number": 1.05,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Stradavar",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Stradavar Prime",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Supra",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Supra Vandal",
+        "number": 1.0,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Sybaris",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Dex Sybaris",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Synapse",
+        "number": 1.31,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Coda Synapse",
+        "number": 0.9,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Tenet Envoy",
+        "number": 0.65,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Tetra",
+        "number": 1.5,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Prisma Tetra",
+        "number": 1.45,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Tenet Tetra",
+        "number": 1.25,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Tenora",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Tenora Prime",
+        "number": 1.05,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Tiberon",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Tiberon Prime",
+        "number": 1.0,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Tombfinger (primary)",
+        "number": 1.0,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Tonkor",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Kuva Tonkor",
+        "number": 0.9,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Torid",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Trumna",
+        "number": 0.85,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Trumna Prime",
+        "number": 0.65,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Vadarya Prime",
+        "number": 0.8,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Vectis",
+        "number": 1.15,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Vectis Prime",
+        "number": 1.0,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Veldt",
+        "number": 1.3,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Vermisplicer (primary)",
+        "number": 0.9,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Vinquibus (rifle)",
+        "number": 0.6,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Vulkar",
+        "number": 1.45,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Vulkar Wraith",
+        "number": 1.4,
+        "category": "higher",
+        "type": "rifle"
+    },
+    {
+        "name": "Zarr",
+        "number": 1.15,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Kuva Zarr",
+        "number": 0.7,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Zenith",
+        "number": 1.1,
+        "category": "lower",
+        "type": "rifle"
+    },
+    {
+        "name": "Zhuge Prime",
+        "number": 1.15,
+        "category": "lower",
+        "type": "rifle"
+    }
+]

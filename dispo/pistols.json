@@ -1,0 +1,806 @@
+[
+    {
+        "name": "Acrid",
+        "number": 1.33,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Aegrit",
+        "number": 1.0,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Afuris",
+        "number": 1.45,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Dex Furis",
+        "number": 1.39,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Afuris Prime",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Akarius",
+        "number": 1.05,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Akarius Prime",
+        "number": 0.65,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Akbolto",
+        "number": 1.3,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Telos Akbolto",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Akbronco",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Akbronco Prime",
+        "number": 1.3,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Akjagara",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Akjagara Prime",
+        "number": 1.0,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Aklato",
+        "number": 1.52,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Aklex",
+        "number": 1.05,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Aklex Prime",
+        "number": 0.95,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Akmagnus",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Akmagnus Prime",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Aksomati",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Aksomati Prime",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Aksondol",
+        "number": 0.5,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Akstiletto",
+        "number": 0.95,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Akstiletto Prime",
+        "number": 0.85,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Akvasto",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Akzani",
+        "number": 1.52,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Angstrum",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Prisma Angstrum",
+        "number": 1.3,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Arca Scisco",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Athodai",
+        "number": 1.05,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Athodai Prime",
+        "number": 0.65,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Atomos",
+        "number": 0.95,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Azima",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Ballistica",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Bolto",
+        "number": 1.51,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Brakk",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Kuva Brakk",
+        "number": 0.95,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Bronco",
+        "number": 1.45,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Bronco Prime",
+        "number": 1.4,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Cantare",
+        "number": 1.05,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Castanas",
+        "number": 1.4,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Sancti Castanas",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Coda Catabolyst",
+        "number": 0.7,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Catchmoon (secondary)",
+        "number": 0.75,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Cestra",
+        "number": 1.52,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Cyanex",
+        "number": 1.0,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Tenet Cycron",
+        "number": 0.7,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Despair",
+        "number": 1.3,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Detron",
+        "number": 1.15,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Mara Detron",
+        "number": 1.15,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Tenet Detron",
+        "number": 1.0,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Dual Cestra",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Secura Dual Cestra",
+        "number": 1.3,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Dual Coda Torxica",
+        "number": 0.55,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Dual Toxocyst",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "EFV-8 Mars",
+        "number": 1.05,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Embolist",
+        "number": 1.4,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Epitaph",
+        "number": 0.6,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Epitaph Prime",
+        "number": 0.55,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Euphona Prime",
+        "number": 0.95,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Furis",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Fusilai",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Gammacor",
+        "number": 1.15,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Synoid Gammacor",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Gaze (secondary)",
+        "number": 1.05,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Grimoire",
+        "number": 0.6,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Hikou",
+        "number": 1.3,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Hikou Prime",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Hystrix Prime",
+        "number": 1.05,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Knell",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Knell Prime",
+        "number": 0.85,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Kohmak",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Kompressa",
+        "number": 1.15,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Kompressa Prime",
+        "number": 0.6,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Kraken",
+        "number": 1.53,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Kuva Kraken",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Kulstar",
+        "number": 1.3,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "MK1-Kunai",
+        "number": 1.51,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Kunai",
+        "number": 1.51,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Kuva Twin Stubbas",
+        "number": 1.0,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Laetum",
+        "number": 0.5,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Lato",
+        "number": 1.4,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Lato Prime",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Lato Vandal",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Lex",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Magnus",
+        "number": 1.53,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Magnus Prime",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Vaykor Marelok",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Nukor",
+        "number": 1.45,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Kuva Nukor",
+        "number": 0.5,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Onos",
+        "number": 0.85,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Pandero Prime",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Tenet Plinx",
+        "number": 0.75,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Coda Pox",
+        "number": 1.05,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Pyrana",
+        "number": 0.95,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Pyrana Prime",
+        "number": 0.65,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Rattleguts (secondary)",
+        "number": 1.0,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Riot-848",
+        "number": 1.0,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Sagek Prime",
+        "number": 0.9,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Scyotid",
+        "number": 0.75,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Seer",
+        "number": 1.5,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Kuva Seer",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Sepulcrum",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Sicarus Prime",
+        "number": 1.15,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Sonicor",
+        "number": 1.15,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Spectra",
+        "number": 1.49,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Spectra Vandal",
+        "number": 1.45,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Spira",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Spira Prime",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Sporelacer (secondary)",
+        "number": 0.6,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Staticor",
+        "number": 0.9,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Stubba",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Stug",
+        "number": 1.48,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Talons",
+        "number": 1.44,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Tenet Diplos",
+        "number": 0.8,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Tenet Spirex",
+        "number": 1.05,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Tombfinger (secondary)",
+        "number": 0.9,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Prisma Twin Gremlins",
+        "number": 1.15,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Twin Kohmak",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Twin Rogga",
+        "number": 1.3,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Twin Vipers",
+        "number": 1.45,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Twin Vipers Wraith",
+        "number": 1.41,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Tysis",
+        "number": 1.45,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Coda Tysis",
+        "number": 1.0,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Vasto Prime",
+        "number": 1.35,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Velox",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Velox Prime",
+        "number": 0.85,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Vermisplicer (secondary)",
+        "number": 1.15,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Vesper 77",
+        "number": 0.8,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Viper",
+        "number": 1.45,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Viper Wraith",
+        "number": 1.4,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Zakti",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Zakti Prime",
+        "number": 1.1,
+        "category": "lower",
+        "type": "pistol"
+    },
+    {
+        "name": "Zylok",
+        "number": 1.25,
+        "category": "higher",
+        "type": "pistol"
+    },
+    {
+        "name": "Zylok Prime",
+        "number": 0.95,
+        "category": "lower",
+        "type": "pistol"
+    }
+]

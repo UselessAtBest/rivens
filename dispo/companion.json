@@ -1,0 +1,140 @@
+[
+    {
+        "name": "Akaten",
+        "number": 1.0,
+        "category": "lower",
+        "type": "companion"
+    },
+    {
+        "name": "Artax",
+        "number": 1.0,
+        "category": "lower",
+        "type": "companion"
+    },
+    {
+        "name": "Batoten",
+        "number": 1.0,
+        "category": "lower",
+        "type": "companion"
+    },
+    {
+        "name": "Burst Laser",
+        "number": 1.45,
+        "category": "higher",
+        "type": "companion"
+    },
+    {
+        "name": "Prisma Burst Laser",
+        "number": 1.45,
+        "category": "higher",
+        "type": "companion"
+    },
+    {
+        "name": "Burst Laser Prime",
+        "number": 1.45,
+        "category": "higher",
+        "type": "companion"
+    },
+    {
+        "name": "Cryotra",
+        "number": 1.0,
+        "category": "lower",
+        "type": "companion"
+    },
+    {
+        "name": "Deconstructor",
+        "number": 1.25,
+        "category": "higher",
+        "type": "companion"
+    },
+    {
+        "name": "Deconstructor Prime",
+        "number": 1.25,
+        "category": "higher",
+        "type": "companion"
+    },
+    {
+        "name": "Deth Machine Rifle",
+        "number": 1.46,
+        "category": "higher",
+        "type": "companion"
+    },
+    {
+        "name": "Deth Machine Rifle Prime",
+        "number": 1.46,
+        "category": "higher",
+        "type": "companion"
+    },
+    {
+        "name": "Helstrum",
+        "number": 1.0,
+        "category": "lower",
+        "type": "companion"
+    },
+    {
+        "name": "Lacerten",
+        "number": 1.0,
+        "category": "lower",
+        "type": "companion"
+    },
+    {
+        "name": "Laser Rifle",
+        "number": 1.21,
+        "category": "higher",
+        "type": "companion"
+    },
+    {
+        "name": "Prime Laser Rifle",
+        "number": 1.21,
+        "category": "higher",
+        "type": "companion"
+    },
+    {
+        "name": "Multron",
+        "number": 1.0,
+        "category": "lower",
+        "type": "companion"
+    },
+    {
+        "name": "Sweeper",
+        "number": 1.0,
+        "category": "lower",
+        "type": "companion"
+    },
+    {
+        "name": "Sweeper Prime",
+        "number": 1.0,
+        "category": "lower",
+        "type": "companion"
+    },
+    {
+        "name": "Tazicor",
+        "number": 1.0,
+        "category": "lower",
+        "type": "companion"
+    },
+    {
+        "name": "Verglas",
+        "number": 1.3,
+        "category": "higher",
+        "type": "companion"
+    },
+    {
+        "name": "Verglas Prime",
+        "number": 1.3,
+        "category": "higher",
+        "type": "companion"
+    },
+    {
+        "name": "Vulcax",
+        "number": 1.0,
+        "category": "lower",
+        "type": "companion"
+    },
+    {
+        "name": "Vulklok",
+        "number": 1.25,
+        "category": "higher",
+        "type": "companion"
+    }
+]

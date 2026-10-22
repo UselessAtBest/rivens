@@ -1,0 +1,212 @@
+[
+    {
+        "name": "Arca Plasmor",
+        "number": 0.95,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Tenet Arca Plasmor",
+        "number": 0.6,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Astilla",
+        "number": 1.3,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Boar",
+        "number": 1.45,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Boar Prime",
+        "number": 1.34,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Bubonico",
+        "number": 0.75,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Coda Bubonico",
+        "number": 0.6,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Cedo",
+        "number": 0.65,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Cedo Prime",
+        "number": 0.55,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Coda Bassocyst",
+        "number": 0.6,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Convectrix",
+        "number": 1.46,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Corinth",
+        "number": 1.15,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Corinth Prime",
+        "number": 1.0,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Drakgoon",
+        "number": 1.4,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Kuva Drakgoon",
+        "number": 1.15,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Exergis",
+        "number": 1.1,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Felarx",
+        "number": 0.6,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Vaykor Hek",
+        "number": 1.15,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Kuva Hek",
+        "number": 1.0,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Kohm",
+        "number": 1.3,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Kuva Kohm",
+        "number": 0.9,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Phage",
+        "number": 1.46,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Phantasma",
+        "number": 1.1,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Phantasma Prime",
+        "number": 0.8,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Rauta",
+        "number": 1.1,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Sobek",
+        "number": 1.33,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Kuva Sobek",
+        "number": 0.8,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Steflos",
+        "number": 1.25,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Steflos Prime",
+        "number": 0.5,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "MK1-Strun",
+        "number": 1.45,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Strun",
+        "number": 1.4,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Strun Wraith",
+        "number": 1.35,
+        "category": "higher",
+        "type": "shotgun"
+    },
+    {
+        "name": "Tigris",
+        "number": 1.1,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Sancti Tigris",
+        "number": 1.0,
+        "category": "lower",
+        "type": "shotgun"
+    },
+    {
+        "name": "Tigris Prime",
+        "number": 0.95,
+        "category": "lower",
+        "type": "shotgun"
+    }
+]

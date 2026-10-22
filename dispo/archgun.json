@@ -1,0 +1,116 @@
+[
+    {
+        "name": "Arbucep",
+        "number": 0.7,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Cortege",
+        "number": 1.0,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Corvas Prime",
+        "number": 1.0,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Dual Decurion",
+        "number": 1.3,
+        "category": "higher",
+        "type": "archgun"
+    },
+    {
+        "name": "Prisma Dual Decurions",
+        "number": 1.25,
+        "category": "higher",
+        "type": "archgun"
+    },
+    {
+        "name": "Cyngas",
+        "number": 1.3,
+        "category": "higher",
+        "type": "archgun"
+    },
+    {
+        "name": "Fluctus",
+        "number": 1.3,
+        "category": "higher",
+        "type": "archgun"
+    },
+    {
+        "name": "Grattler",
+        "number": 1.1,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Kuva Grattler",
+        "number": 0.7,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Imperator",
+        "number": 1.1,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Imperator Vandal",
+        "number": 0.95,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Kuva Ayanga",
+        "number": 0.95,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Larkspur",
+        "number": 1.05,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Larkspur Prime",
+        "number": 0.8,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Mandonel",
+        "number": 1.1,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Mausolon",
+        "number": 0.5,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Morgha",
+        "number": 1.0,
+        "category": "lower",
+        "type": "archgun"
+    },
+    {
+        "name": "Phaedra",
+        "number": 1.25,
+        "category": "higher",
+        "type": "archgun"
+    },
+    {
+        "name": "Velocitus",
+        "number": 1.1,
+        "category": "lower",
+        "type": "archgun"
+    }
+]

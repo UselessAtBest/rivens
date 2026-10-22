@@ -1,0 +1,1334 @@
+[
+    {
+        "name": "Amanata",
+        "number": 0.85,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Amphis",
+        "number": 1.5,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Anku",
+        "number": 1.46,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Ankyros",
+        "number": 1.5,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Ankyros Prime",
+        "number": 1.45,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Arca Titron",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Argo & Vel",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Arum Spinosa",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Atterax",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Azothane",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Balla",
+        "number": 0.8,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "MK1-Bo",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Bo",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Bo Prime",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Boltace",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Telos Boltace",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Broken Scepter",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Broken War",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Cadus",
+        "number": 1.29,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Cassowar",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Caustacyst",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Coda Caustacyst",
+        "number": 0.85,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Ceramic Dagger",
+        "number": 1.43,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Cerata",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Cobra & Crane",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Coda Motovore",
+        "number": 0.8,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Corufell",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Corufell Prime",
+        "number": 0.5,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Cronus",
+        "number": 1.48,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Cyath",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Dakra Prime",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Dark Dagger",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Rakta Dark Dagger",
+        "number": 1.0,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Dark Split-Sword",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Dark Sword",
+        "number": 1.48,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Dehtat",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Destreza",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Destreza Prime",
+        "number": 1.14,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Dex Dakra",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Dokrahm",
+        "number": 0.75,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Dorrclave",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Dragon Nikana",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Prisma Dual Cleavers",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Ether",
+        "number": 1.45,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Heat Swords",
+        "number": 1.44,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Ichor",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Kamas",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Kama Prime",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Keres",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Keres Prime",
+        "number": 0.8,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Raza",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Skana",
+        "number": 1.48,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Viciss",
+        "number": 0.8,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Zoren",
+        "number": 1.44,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Dual Zoren Prime",
+        "number": 0.95,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Edun",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Endura",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Ether Daggers",
+        "number": 1.49,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Ether Reaper",
+        "number": 1.45,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Ether Sword",
+        "number": 1.44,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Falcor",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Fang",
+        "number": 1.36,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Fang Prime",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Fragor Prime",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Mk1-Furax",
+        "number": 1.45,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Furax",
+        "number": 1.38,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Furax Wraith",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Galariak Prime",
+        "number": 0.9,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Galatine",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Galatine Prime",
+        "number": 0.9,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Galvacord",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Gazal Machete",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Ghoulsaw",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Kuva Ghoulsaw",
+        "number": 0.8,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Glaive",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Glaive Prime",
+        "number": 0.7,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Gram",
+        "number": 1.44,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Gram Prime",
+        "number": 0.8,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Guandao",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Guandao Prime",
+        "number": 0.7,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Gunsen",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Gunsen Prime",
+        "number": 1.0,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Halikar",
+        "number": 1.44,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Harmony",
+        "number": 0.6,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Hate",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Heat Dagger",
+        "number": 1.44,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Heat Sword",
+        "number": 1.48,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Heliocor",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Synoid Heliocor",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Hespar",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Hirudo",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Coda Hirudo",
+        "number": 0.75,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Innodem",
+        "number": 0.65,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Jat Kittag",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Jaw Sword",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Kama",
+        "number": 1.47,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Karyst",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Karyst Prime",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Keratinos",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Kesheg",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Kestrel",
+        "number": 1.45,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Kestrel Prime",
+        "number": 0.85,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Kogake",
+        "number": 1.46,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Kogake Prime",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Korrudo",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Korrum",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Kreska",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Krohkur",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Kronen",
+        "number": 1.43,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Kronen Prime",
+        "number": 0.7,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Kronsh",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Kuva Shildeg",
+        "number": 0.85,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Lacera",
+        "number": 1.31,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Lecta",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Lesion",
+        "number": 0.85,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Machete",
+        "number": 1.45,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Machete Wraith",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Prisma Machete",
+        "number": 1.45,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Magistar",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Sancti Magistar",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Masseter",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Masseter Prime",
+        "number": 1.0,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Mewan",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Mios",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Mire",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Coda Mire",
+        "number": 0.75,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Nami Skyla",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Nami Skyla Prime",
+        "number": 1.0,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Nami Solo",
+        "number": 1.43,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Nepheri",
+        "number": 0.95,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Nikana",
+        "number": 0.95,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Dex Nikana",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Nikana Prime",
+        "number": 0.6,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Ninkondi",
+        "number": 1.41,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Ninkondi Prime",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Obex",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Prisma Obex",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Ohma",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Prisma Ohma",
+        "number": 0.95,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Okina",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Okina Prime",
+        "number": 0.7,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Ooltha",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Orthos",
+        "number": 1.0,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Orthos Prime",
+        "number": 0.7,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Orvius",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Pangolin Sword",
+        "number": 1.47,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Pangolin Prime",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Paracesis",
+        "number": 0.65,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Pathocyst",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Coda Pathocyst",
+        "number": 0.65,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Pennant",
+        "number": 0.95,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Plague Keewar",
+        "number": 0.9,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Plague Kripath",
+        "number": 0.65,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Plasma Sword",
+        "number": 1.48,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Praedos",
+        "number": 0.6,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Pride",
+        "number": 0.7,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Prova",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Prova Vandal",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Pupacyst",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Quassus",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Quassus Prime",
+        "number": 0.9,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Rabvee",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Reaper Prime",
+        "number": 0.8,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Redeemer",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Redeemer Prime",
+        "number": 0.65,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Ripkas",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Ruvox",
+        "number": 0.9,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Sampotes",
+        "number": 1.0,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Sarofang",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Sarofang Prime",
+        "number": 0.75,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Scindo",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Scindo Prime",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Scoliac",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Sepfahn",
+        "number": 0.7,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Serro",
+        "number": 1.38,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Shaku",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Sheev",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Sibear",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Sigma & Octantis",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Silva & Aegis",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Silva & Aegis Prime",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Skana",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Skiajati",
+        "number": 0.9,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Slaytra",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Spinnerex",
+        "number": 0.85,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Stropha",
+        "number": 0.65,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Sun & Moon",
+        "number": 0.8,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Syam",
+        "number": 0.75,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Sydon",
+        "number": 1.35,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Vaykor Sydon",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Tak & Lug",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Tatsu",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Tatsu Prime",
+        "number": 0.9,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Tekko",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Tekko Prime",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Tenet Agendus",
+        "number": 0.9,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Tenet Exec",
+        "number": 0.8,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Tenet Grigori",
+        "number": 0.95,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Tenet Livia",
+        "number": 0.95,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Thalys",
+        "number": 0.65,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Tipedo",
+        "number": 1.31,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Tipedo Prime",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Tonbo",
+        "number": 1.38,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Tonkkatt",
+        "number": 0.95,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Twin Basolk",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Vastilok",
+        "number": 0.9,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Venato",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Venato Prime",
+        "number": 0.65,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Venka",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Venka Prime",
+        "number": 0.85,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Verdilac",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Vericres",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Vinquibus (Melee)",
+        "number": 0.7,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Vitrica",
+        "number": 1.1,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Volnus",
+        "number": 1.4,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Volnus Prime",
+        "number": 1.3,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "War",
+        "number": 1.05,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "War Prime",
+        "number": 0.65,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Wolf Sledge",
+        "number": 1.25,
+        "category": "higher",
+        "type": "melee"
+    },
+    {
+        "name": "Wrath",
+        "number": 0.7,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Xoris",
+        "number": 0.65,
+        "category": "lower",
+        "type": "melee"
+    },
+    {
+        "name": "Zenistar",
+        "number": 1.15,
+        "category": "lower",
+        "type": "melee"
+    }
+]
