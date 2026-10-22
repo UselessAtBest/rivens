@@ -17,7 +17,7 @@
     <h2>Stats Format</h2>
     <div class="btns" id="mults"></div>
 
-    <div class="tools"><input type="search" id="q" placeholder="Search by stat" aria-label="Search results">
+    <div class="tools"><input type="search" id="q" placeholder="Search by name or number" aria-label="Search results">
     </div>
     <p class="count" id="count"></p>
     <ul id="list"></ul>
@@ -32,8 +32,9 @@
       { label: "+++", value: 0.75 },
       { label: "+++ / -", value: 0.9375 }
     ];
+
     var ALT_VALUES = [0, -0.495, 0, -0.75];
-    var ALT_LABEL = "Negative";
+    var ALT_LABEL = "Negatives";
     var alt = false;
     var LOW = 0.9, HIGH = 1.1, BASE = 1.2;
     var DATA = [];
@@ -53,6 +54,12 @@
 
     function fmt(n) { return (Math.round(n * 100) / 100).toString(); }
 
+    function fmtSigned(n, suffix) {
+      var r = Math.round(n * 100) / 100;
+      if (r === 0) return "0" + suffix;
+      return (r > 0 ? "+" : "-") + Math.abs(r) + suffix;
+    }
+
     function makeGroup(parent, items, isOn, onPick) {
       items.forEach(function (it, i) {
         var b = document.createElement("button");
@@ -62,7 +69,6 @@
         parent.appendChild(b);
       });
       function sync() {
-        // only the group's own buttons (a toggle added after them is left alone)
         [].slice.call(parent.children, 0, items.length).forEach(function (b, i) {
           b.setAttribute("aria-pressed", isOn(i) ? "true" : "false");
         });
@@ -74,7 +80,6 @@
     makeGroup(mults, MULTS.map(function (m) { return { html: m.label }; }),
       function (i) { return i === mult; }, function (i) { mult = i; });
 
-    // Red toggle, inline after the format buttons
     var altBtn = document.createElement("button");
     altBtn.type = "button";
     altBtn.className = "btn toggle-red";
@@ -95,14 +100,21 @@
       var rows = [];
       DATA.forEach(function (d) {
         var v = statValue(d, cat);
-        if (v === null) return; // null or missing for this weapon type: hide the stat
-        rows.push({ name: d.stat, value: v, min: v * LOW * BASE * m, max: v * HIGH * BASE * m });
+        if (v === null) return; 
+        if (alt && d.noNegative === true) return; 
+        var suffix = typeof d.suffix === "string" ? d.suffix : "";
+        var lo = v * LOW * BASE * m, hi = v * HIGH * BASE * m;
+        rows.push({
+          name: d.stat,
+          text: fmtSigned(lo, suffix) + " → " + fmtSigned(hi, suffix),
+          low: Math.min(lo, hi), high: Math.max(lo, hi)
+        });
       });
       rows = rows.filter(function (r) {
         if (!term) return true;
         if (r.name.toLowerCase().indexOf(term) > -1) return true;
-        if (!isNaN(num) && num >= r.min && num <= r.max) return true;
-        return (fmt(r.min) + " " + fmt(r.max)).indexOf(term) > -1;
+        if (!isNaN(num) && num >= r.low && num <= r.high) return true;
+        return r.text.toLowerCase().indexOf(term) > -1;
       });
       count.textContent = rows.length + (rows.length === 1 ? " result" : " results");
       list.innerHTML = "";
@@ -115,7 +127,7 @@
       rows.forEach(function (r) {
         var li = document.createElement("li");
         var a = document.createElement("span"); a.textContent = r.name;
-        var b = document.createElement("span"); b.textContent = fmt(r.min) + " → " + fmt(r.max);
+        var b = document.createElement("span"); b.textContent = r.text;
         li.appendChild(a); li.appendChild(b); list.appendChild(li);
       });
     }
@@ -130,7 +142,7 @@
         list.innerHTML = "";
         var li = document.createElement("li");
         li.className = "empty err";
-        li.textContent = "Could not load data.json (" + err.message + "). Check it sits next to this page and is valid JSON.";
+        li.textContent = "No data.json (" + err.message + "). Contact Useless.";
         list.appendChild(li);
       });
     render();
