@@ -1,504 +1,539 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Values</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Values</title>
 
-<style>
-    :root {
-        color-scheme: dark;
-        --bg: #100B16;
-        --panel: #140E1B;
-        --panel-2: #181122;
-        --border: #452F60;
-        --text: #30C1C6;
-        --muted: #30C1C6;
-        --accent: #407C9A;
-        --buff: #6fd39a;
-        --nerf: #ef8a8a;
-        --toggles: #30C1C6;
-    }
+    <style>
+        :root {
+            color-scheme: dark;
+            --bg: #100B16;
+            --panel: #140E1B;
+            --panel-2: #181122;
+            --border: #452F60;
+            --text: #30C1C6;
+            --muted: #30C1C6;
+            --accent: #407C9A;
+            --buff: #6fd39a;
+            --nerf: #ef8a8a;
+            --toggles: #30C1C6;
+        }
 
-    * { box-sizing: border-box; }
+        * {
+            box-sizing: border-box;
+        }
 
-    body {
-        background: var(--bg);
-        color: var(--text);
-        font: 14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-        margin: 0 auto;
-        padding: 28px 16px 60px;
-        max-width: 960px;
-    }
+        body {
+            background: var(--bg);
+            color: var(--text);
+            font: 14px/1.4 system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+            margin: 0 auto;
+            padding: 28px 16px 60px;
+            max-width: 960px;
+        }
 
-    h1 { font-size: 22px; font-weight: 600; margin: 0 0 18px; }
+        h1 {
+            font-size: 22px;
+            font-weight: 600;
+            margin: 0 0 18px;
+        }
 
-    .controls {
-        background: var(--panel);
-        border: 1px solid var(--border);
-        border-radius: 8px;
-        padding: 14px 16px;
-        display: grid;
-        gap: 12px;
-    }
+        .controls {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 14px 16px;
+            display: grid;
+            gap: 12px;
+        }
 
-    .row {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 8px;
-        color: var(--text);
-    }
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            color: var(--text);
+        }
 
-    .row > .label {
-        color: var(--muted);
-        min-width: 84px;
-    }
+        .row>.label {
+            color: var(--muted);
+            min-width: 84px;
+        }
 
-    select, button {
-        font: inherit;
-        background: var(--panel-2);
-        color: var(--text);
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 7px 11px;
-        cursor: pointer;
-    }
+        select,
+        button {
+            font: inherit;
+            background: var(--panel-2);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 7px 11px;
+            cursor: pointer;
+        }
 
-    input[type="search"] {
-        font: inherit;
-        background: var(--panel-2);
-        color: var(--text);
-        border: 1px solid var(--border);
-        border-radius: 6px;
-        padding: 7px 11px;
-        flex: 1 1 220px;
-        max-width: 360px;
-    }
+        input[type="search"] {
+            font: inherit;
+            background: var(--panel-2);
+            color: var(--text);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            padding: 7px 11px;
+            flex: 1 1 220px;
+            max-width: 360px;
+        }
 
-    input[type="search"]::placeholder { color: var(--muted); }
+        input[type="search"]::placeholder {
+            color: var(--muted);
+        }
 
-    input[type="search"]:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 1px;
-    }
+        input[type="search"]:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 1px;
+        }
 
-    select:hover, button:hover { border-color: #4a5160; }
+        select:hover,
+        button:hover {
+            border-color: #4a5160;
+        }
 
-    select:focus-visible, button:focus-visible {
-        outline: 2px solid var(--accent);
-        outline-offset: 1px;
-    }
+        select:focus-visible,
+        button:focus-visible {
+            outline: 2px solid var(--accent);
+            outline-offset: 1px;
+        }
 
-    /* On/off toggles */
-    .toggle[aria-pressed="true"] {
-        background: rgba(106, 167, 255, 0.16);
-        border-color: var(--accent);
-        color: var(--toggles);
-    }
+        /* On/off toggles */
+        .toggle[aria-pressed="true"] {
+            background: rgba(106, 167, 255, 0.16);
+            border-color: var(--accent);
+            color: var(--toggles);
+        }
 
-    .toggle[aria-pressed="false"] {
-        color: var(--muted);
-        text-decoration: line-through;
-    }
+        .toggle[aria-pressed="false"] {
+            color: var(--muted);
+            text-decoration: line-through;
+        }
 
-    /* Prime toggle reads as "hide" when on */
-    #primeToggle[aria-pressed="true"] {
-        background: rgba(239, 138, 138, 0.14);
-        border-color: var(--nerf);
-    }
-    #primeToggle[aria-pressed="false"] {
-        text-decoration: none;
-    }
+        #primeToggle[aria-pressed="true"] {
+            background: rgba(239, 138, 138, 0.14);
+            border-color: var(--nerf);
+        }
 
-    /* Segmented control (All / Buffs / Nerfs) */
-    .segmented { display: inline-flex; }
-    .segmented button { border-radius: 0; margin-left: -1px; }
-    .segmented button:first-child { border-radius: 6px 0 0 6px; margin-left: 0; }
-    .segmented button:last-child { border-radius: 0 6px 6px 0; }
-    .segmented button[aria-pressed="true"] {
-        background: rgba(106, 167, 255, 0.16);
-        border-color: var(--accent);
-        color: #fff;
-        position: relative;
-        z-index: 1;
-    }
+        #primeToggle[aria-pressed="false"] {
+            text-decoration: none;
+        }
 
-    #status { color: var(--muted); margin: 14px 2px 8px; }
-    #status.error { color: var(--nerf); }
+        /* Segmented control (All / Buffs / Nerfs) */
+        .segmented {
+            display: inline-flex;
+        }
 
-    .table-wrap { overflow-x: auto; }
+        .segmented button {
+            border-radius: 0;
+            margin-left: -1px;
+        }
 
-    table {
-        width: 100%;
-        border-collapse: collapse;
-        text-align: left;
-    }
+        .segmented button:first-child {
+            border-radius: 6px 0 0 6px;
+            margin-left: 0;
+        }
 
-    th, td {
-        padding: 9px 10px;
-        border-bottom: 1px solid var(--border);
-        white-space: nowrap;
-    }
+        .segmented button:last-child {
+            border-radius: 0 6px 6px 0;
+        }
 
-    th {
-        color: var(--muted);
-        font-weight: 500;
-        position: sticky;
-        top: 0;
-        background: var(--bg);
-    }
+        .segmented button[aria-pressed="true"] {
+            background: rgba(106, 167, 255, 0.16);
+            border-color: var(--accent);
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
 
-    tbody tr:hover { background: var(--panel); }
+        #status {
+            color: var(--muted);
+            margin: 14px 2px 8px;
+        }
 
-    .buff { color: var(--buff); }
-    .nerf { color: var(--nerf); }
-</style>
+        #status.error {
+            color: var(--nerf);
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        th,
+        td {
+            padding: 9px 10px;
+            border-bottom: 1px solid var(--border);
+            white-space: nowrap;
+        }
+
+        th {
+            color: var(--muted);
+            font-weight: 500;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+        }
+
+        tbody tr:hover {
+            background: var(--panel);
+        }
+
+        .buff {
+            color: var(--buff);
+        }
+
+        .nerf {
+            color: var(--nerf);
+        }
+    </style>
 </head>
 
 <body>
-<h1>Values</h1>
+    <h1>Values</h1>
 
-<div class="controls">
-    <div class="row">
-        <span class="label">Search</span>
-        <input type="search" id="search" placeholder="Filter by name..." aria-label="Search by name" autocomplete="off">
-    </div>
+    <div class="controls">
+        <div class="row">
+            <span class="label">Search</span>
+            <input type="search" id="search" placeholder="Filter by name..." aria-label="Search by name"
+                autocomplete="off">
+        </div>
 
-    <div class="row">
-        <span class="label">Sort</span>
-        <select id="sort" aria-label="Sort by"></select>
-        <select id="order" aria-label="Sort order">
-            <option value="desc">Descending</option>
-            <option value="asc">Ascending</option>
-        </select>
-    </div>
+        <div class="row">
+            <span class="label">Sort</span>
+            <select id="sort" aria-label="Sort by"></select>
+            <select id="order" aria-label="Sort order">
+                <option value="desc">Descending</option>
+                <option value="asc">Ascending</option>
+            </select>
+        </div>
 
-    <div class="row">
-        <span class="label">Change</span>
-        <div class="segmented" id="changeFilter" role="group" aria-label="Buff or nerf filter">
-            <button type="button" data-mode="all" aria-pressed="true">All</button>
-            <button type="button" data-mode="buff" aria-pressed="false">Buffs</button>
-            <button type="button" data-mode="nerf" aria-pressed="false">Nerfs</button>
+        <div class="row">
+            <span class="label">Change</span>
+            <div class="segmented" id="changeFilter" role="group" aria-label="Buff or nerf filter">
+                <button type="button" data-mode="all" aria-pressed="true">All</button>
+                <button type="button" data-mode="buff" aria-pressed="false">Buffs</button>
+                <button type="button" data-mode="nerf" aria-pressed="false">Nerfs</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <span class="label">Primes</span>
+            <button type="button" class="toggle" id="primeToggle" aria-pressed="false">Hide non-Primes</button>
+        </div>
+
+        <div class="row">
+            <span class="label">Types</span>
+            <div class="row" id="typeToggles"></div>
         </div>
     </div>
 
-    <div class="row">
-        <span class="label">Primes</span>
-        <button type="button" class="toggle" id="primeToggle" aria-pressed="false">Hide non-Primes</button>
+    <div id="status">Loading...</div>
+
+    <div class="table-wrap">
+        <table>
+            <thead id="head"></thead>
+            <tbody id="body"></tbody>
+        </table>
     </div>
 
-    <div class="row">
-        <span class="label">Types</span>
-        <div class="row" id="typeToggles"></div>
-    </div>
-</div>
+    <script>
+        const THRESHOLD = 1.2;
 
-<div id="status">Loading...</div>
+        // Json per weapon type
+        const FILES = [
+            "rifles.json",
+            "shotgun.json",
+            "pistols.json",
+            "melee.json",
+            "archgun.json",
+            "companion.json"
+        ];
 
-<div class="table-wrap">
-    <table>
-        <thead id="head"></thead>
-        <tbody id="body"></tbody>
-    </table>
-</div>
+        const LABELS = {
+            name: "Weapon",
+            number: "Previous Dispo",
+            category: "Buff/Nerf",
+            type: "Weapon Type",
+            difference: "Change"
+        };
 
-<script>
-const THRESHOLD = 1.2;
+        // I dont actually know what to call these, cos they basicaly do the same thing, but different??
+        const SORT_LABELS = {
+            change: "Smallest Change (+/-)",
+            difference: "Difference"
+        };
 
-// Every file to load. Add or remove files here.
-const FILES = [
-    "rifles.json",
-    "shotgun.json",
-    "pistols.json",
-    "melee.json",
-    "archgun.json",
-    "companion.json"
-];
+        const label = key => LABELS[key] ?? key;
+        const sortLabel = key => SORT_LABELS[key] ?? label(key);
 
-// Display names. Left side = the key in your JSON (or "difference"/"change"),
-// right side = the text shown. Anything not listed shows its raw key.
-const LABELS = {
-    name: "Weapon",
-    number: "Previous Dispo",
-    category: "Buff/Nerf",
-    type: "Weapon Type",
-    difference: "Change"
-};
+        let entries = [];
+        let keys = [];
+        let loadErrors = [];
+        let hasPrime = new Set(); 
 
-// Optional: different wording for the Sort dropdown only.
-const SORT_LABELS = {
-    change: "Change (+/-)",
-    difference: "Difference"
-};
+        const state = {
+            changeMode: "all",        
+            query: "",
+            hidePrimes: false,
+            disabledTypes: new Set()  
+        };
 
-const label = key => LABELS[key] ?? key;
-const sortLabel = key => SORT_LABELS[key] ?? label(key);
+        const $ = id => document.getElementById(id);
 
-let entries = [];
-let keys = [];
-let loadErrors = [];
-let hasPrime = new Set(); // lowercase base names that have a "<name> Prime" entry
 
-const state = {
-    changeMode: "all",        // "all" | "buff" | "nerf"
-    query: "",
-    hidePrimes: false,
-    disabledTypes: new Set()  // types the user has switched off
-};
+        function diffOf(item) {
+            if (item.number == null || item.number === "") return null;
+            const n = Number(item.number);
+            if (!Number.isFinite(n)) return null;
+            return Math.round((THRESHOLD - n) * 1e6) / 1e6;
+        }
 
-const $ = id => document.getElementById(id);
+        function value(item, key) {
+            if (key === "difference") return diffOf(item);
+            if (key === "change") {
+                const d = diffOf(item);
+                return d == null ? null : Math.abs(d);
+            }
+            return item[key];
+        }
 
-/* ---------- Data helpers ---------- */
+        function compare(a, b) {
+            if (typeof a === "number" && typeof b === "number") return a - b;
 
-function diffOf(item) {
-    if (item.number == null || item.number === "") return null;
-    const n = Number(item.number);
-    if (!Number.isFinite(n)) return null;
-    return Math.round((THRESHOLD - n) * 1e6) / 1e6; // amount needed to reach 1.2; avoids float noise
-}
+            const na = a !== "" ? Number(a) : NaN;
+            const nb = b !== "" ? Number(b) : NaN;
+            if (Number.isFinite(na) && Number.isFinite(nb)) return na - nb;
 
-function value(item, key) {
-    if (key === "difference") return diffOf(item);
-    if (key === "change") {
-        const d = diffOf(item);
-        return d == null ? null : Math.abs(d);
-    }
-    return item[key];
-}
+            return String(a).localeCompare(String(b), undefined, {
+                numeric: true,
+                sensitivity: "base"
+            });
+        }
 
-function compare(a, b) {
-    if (typeof a === "number" && typeof b === "number") return a - b;
+        function display(v) {
+            if (v == null) return "";
+            if (typeof v === "object") return JSON.stringify(v);
+            return String(v);
+        }
 
-    const na = a !== "" ? Number(a) : NaN;
-    const nb = b !== "" ? Number(b) : NaN;
-    if (Number.isFinite(na) && Number.isFinite(nb)) return na - nb;
+        function typeOf(item) {
+            return String(item.type ?? "").toLowerCase();
+        }
 
-    return String(a).localeCompare(String(b), undefined, {
-        numeric: true,
-        sensitivity: "base"
-    });
-}
+        const normName = name => String(name ?? "").trim().toLowerCase();
+        const isPrime = item => /\bprime$/.test(normName(item.name));
 
-function display(v) {
-    if (v == null) return "";
-    if (typeof v === "object") return JSON.stringify(v);
-    return String(v);
-}
+        // magic to hide the primes
+        function buildPrimeIndex() {
+            hasPrime = new Set(
+                entries
+                    .filter(isPrime)
+                    .map(item => normName(item.name).replace(/\s*\bprime$/, ""))
+            );
+        }
 
-function typeOf(item) {
-    return String(item.type ?? "").toLowerCase();
-}
 
-/* ---------- Prime helpers ---------- */
+        async function loadAll() {
+            const results = await Promise.allSettled(FILES.map(async file => {
+                const response = await fetch("./" + file);
+                if (!response.ok) throw new Error(`${file}: HTTP ${response.status}`);
 
-const normName = name => String(name ?? "").trim().toLowerCase();
-const isPrime = item => /\bprime$/.test(normName(item.name));
+                const data = await response.json();
+                if (!Array.isArray(data)) throw new Error(`${file}: JSON must be an array`);
+                return data;
+            }));
 
-// Collect the base name of every Prime entry, e.g. "Burston Prime" -> "burston"
-function buildPrimeIndex() {
-    hasPrime = new Set(
-        entries
-            .filter(isPrime)
-            .map(item => normName(item.name).replace(/\s*\bprime$/, ""))
-    );
-}
+            const failed = results
+                .filter(r => r.status === "rejected")
+                .map(r => r.reason.message);
 
-/* ---------- Loading ---------- */
+            entries = results
+                .filter(r => r.status === "fulfilled")
+                .flatMap(r => r.value);
 
-async function loadAll() {
-    const results = await Promise.allSettled(FILES.map(async file => {
-        const response = await fetch("./" + file);
-        if (!response.ok) throw new Error(`${file}: HTTP ${response.status}`);
+            keys = [...new Set(entries.flatMap(item => Object.keys(item)))];
 
-        const data = await response.json();
-        if (!Array.isArray(data)) throw new Error(`${file}: JSON must be an array`);
-        return data;
-    }));
+            loadErrors = failed;
+            buildPrimeIndex();
 
-    const failed = results
-        .filter(r => r.status === "rejected")
-        .map(r => r.reason.message);
-
-    entries = results
-        .filter(r => r.status === "fulfilled")
-        .flatMap(r => r.value);
-
-    keys = [...new Set(entries.flatMap(item => Object.keys(item)))];
-
-    loadErrors = failed;
-    buildPrimeIndex();
-
-    buildSortOptions();
-    buildTypeToggles();
-    render();
-}
-
-function buildSortOptions() {
-    const sort = $("sort");
-    sort.replaceChildren();
-
-    const fields = [
-        ["change", sortLabel("change")],
-        ["difference", sortLabel("difference")],
-        ...keys.map(key => [key, sortLabel(key)])
-    ];
-
-    fields.forEach(([val, label]) => {
-        const option = document.createElement("option");
-        option.value = val;
-        option.textContent = label;
-        sort.appendChild(option);
-    });
-
-    sort.value = "change";
-}
-
-function buildTypeToggles() {
-    const wrap = $("typeToggles");
-    wrap.replaceChildren();
-
-    // Types in the order they first appear (follows FILES order)
-    const types = [...new Set(entries.map(typeOf).filter(Boolean))];
-
-    types.forEach(type => {
-        const btn = document.createElement("button");
-        btn.type = "button";
-        btn.className = "toggle";
-        btn.textContent = type;
-        btn.setAttribute("aria-pressed", "true");
-
-        btn.addEventListener("click", () => {
-            const nowOff = !state.disabledTypes.has(type);
-            if (nowOff) state.disabledTypes.add(type);
-            else state.disabledTypes.delete(type);
-            btn.setAttribute("aria-pressed", String(!nowOff));
+            buildSortOptions();
+            buildTypeToggles();
             render();
-        });
+        }
 
-        wrap.appendChild(btn);
-    });
-}
+        function buildSortOptions() {
+            const sort = $("sort");
+            sort.replaceChildren();
 
-/* ---------- Filtering ---------- */
+            const fields = [
+                ["change", sortLabel("change")],
+                ["difference", sortLabel("difference")],
+                ...keys.map(key => [key, sortLabel(key)])
+            ];
 
-function passesFilters(item) {
-    if (state.disabledTypes.has(typeOf(item))) return false;
+            fields.forEach(([val, label]) => {
+                const option = document.createElement("option");
+                option.value = val;
+                option.textContent = label;
+                sort.appendChild(option);
+            });
 
-    if (state.query && !normName(item.name).includes(state.query)) return false;
+            sort.value = "change";
+        }
 
-    // Hide a non-Prime only if a Prime version of it exists
-    if (state.hidePrimes && !isPrime(item) && hasPrime.has(normName(item.name))) return false;
+        function buildTypeToggles() {
+            const wrap = $("typeToggles");
+            wrap.replaceChildren();
 
-    if (state.changeMode !== "all") {
-        const d = diffOf(item);
-        if (d == null) return false;
-        if (state.changeMode === "buff" && d <= 0) return false;
-        if (state.changeMode === "nerf" && d >= 0) return false;
-    }
+            const types = [...new Set(entries.map(typeOf).filter(Boolean))];
 
-    return true;
-}
+            types.forEach(type => {
+                const btn = document.createElement("button");
+                btn.type = "button";
+                btn.className = "toggle";
+                btn.textContent = type;
+                btn.setAttribute("aria-pressed", "true");
 
-/* ---------- Rendering ---------- */
+                btn.addEventListener("click", () => {
+                    const nowOff = !state.disabledTypes.has(type);
+                    if (nowOff) state.disabledTypes.add(type);
+                    else state.disabledTypes.delete(type);
+                    btn.setAttribute("aria-pressed", String(!nowOff));
+                    render();
+                });
 
-function render() {
-    const key = $("sort").value;
-    const direction = $("order").value === "asc" ? 1 : -1;
+                wrap.appendChild(btn);
+            });
+        }
 
-    const visible = entries.filter(passesFilters);
 
-    const sorted = visible.sort((a, b) => {
-        const av = value(a, key);
-        const bv = value(b, key);
+        function passesFilters(item) {
+            if (state.disabledTypes.has(typeOf(item))) return false;
 
-        // Empty values always sink to the bottom
-        if (av == null && bv == null) return 0;
-        if (av == null) return 1;
-        if (bv == null) return -1;
+            if (state.query && !normName(item.name).includes(state.query)) return false;
 
-        return direction * compare(av, bv);
-    });
+            // more prime magic here
+            if (state.hidePrimes && !isPrime(item) && hasPrime.has(normName(item.name))) return false;
 
-    const columns = [...keys];
-    if (!columns.includes("difference")) columns.push("difference");
-
-    const head = $("head");
-    head.replaceChildren();
-    const tr = document.createElement("tr");
-    columns.forEach(col => {
-        const th = document.createElement("th");
-        th.textContent = label(col);
-        tr.appendChild(th);
-    });
-    head.appendChild(tr);
-
-    const body = $("body");
-    body.replaceChildren();
-
-    sorted.forEach(item => {
-        const row = document.createElement("tr");
-
-        columns.forEach(col => {
-            const td = document.createElement("td");
-            const v = value(item, col);
-
-            if (col === "difference" && v != null) {
-                td.textContent = `${v > 0 ? "+" : ""}${v.toFixed(3)}`;
-                td.className = v > 0 ? "buff" : v < 0 ? "nerf" : "";
-            } else {
-                td.textContent = display(v);
+            if (state.changeMode !== "all") {
+                const d = diffOf(item);
+                if (d == null) return false;
+                if (state.changeMode === "buff" && d <= 0) return false;
+                if (state.changeMode === "nerf" && d >= 0) return false;
             }
 
-            row.appendChild(td);
+            return true;
+        }
+
+
+        function render() {
+            const key = $("sort").value;
+            const direction = $("order").value === "asc" ? 1 : -1;
+
+            const visible = entries.filter(passesFilters);
+
+            const sorted = visible.sort((a, b) => {
+                const av = value(a, key);
+                const bv = value(b, key);
+
+                if (av == null && bv == null) return 0;
+                if (av == null) return 1;
+                if (bv == null) return -1;
+
+                return direction * compare(av, bv);
+            });
+
+            const columns = [...keys];
+            if (!columns.includes("difference")) columns.push("difference");
+
+            const head = $("head");
+            head.replaceChildren();
+            const tr = document.createElement("tr");
+            columns.forEach(col => {
+                const th = document.createElement("th");
+                th.textContent = label(col);
+                tr.appendChild(th);
+            });
+            head.appendChild(tr);
+
+            const body = $("body");
+            body.replaceChildren();
+
+            sorted.forEach(item => {
+                const row = document.createElement("tr");
+
+                columns.forEach(col => {
+                    const td = document.createElement("td");
+                    const v = value(item, col);
+
+                    if (col === "difference" && v != null) {
+                        td.textContent = `${v > 0 ? "+" : ""}${v.toFixed(3)}`;
+                        td.className = v > 0 ? "buff" : v < 0 ? "nerf" : "";
+                    } else {
+                        td.textContent = display(v);
+                    }
+
+                    row.appendChild(td);
+                });
+
+                body.appendChild(row);
+            });
+
+            const status = $("status");
+            const count = `Showing ${sorted.length} of ${entries.length} entries`;
+            if (loadErrors.length) {
+                status.className = "error";
+                status.textContent = `${count}. Could not load: ${loadErrors.join("; ")}`;
+            } else {
+                status.className = "";
+                status.textContent = count;
+            }
+        }
+
+
+        function refresh() {
+            render();
+        }
+
+        $("search").addEventListener("input", e => {
+            state.query = e.target.value.trim().toLowerCase();
+            refresh();
         });
 
-        body.appendChild(row);
-    });
+        $("sort").addEventListener("change", refresh);
+        $("order").addEventListener("change", refresh);
 
-    const status = $("status");
-    const count = `Showing ${sorted.length} of ${entries.length} entries`;
-    if (loadErrors.length) {
-        status.className = "error";
-        status.textContent = `${count}. Could not load: ${loadErrors.join("; ")}`;
-    } else {
-        status.className = "";
-        status.textContent = count;
-    }
-}
+        $("primeToggle").addEventListener("click", e => {
+            state.hidePrimes = !state.hidePrimes;
+            e.currentTarget.setAttribute("aria-pressed", String(state.hidePrimes));
+            refresh();
+        });
 
-/* ---------- Events ---------- */
+        $("changeFilter").addEventListener("click", e => {
+            const btn = e.target.closest("button[data-mode]");
+            if (!btn) return;
 
-function refresh() {
-    render();
-}
+            state.changeMode = btn.dataset.mode;
+            $("changeFilter").querySelectorAll("button").forEach(b =>
+                b.setAttribute("aria-pressed", String(b === btn))
+            );
+            refresh();
+        });
 
-$("search").addEventListener("input", e => {
-    state.query = e.target.value.trim().toLowerCase();
-    refresh();
-});
-
-$("sort").addEventListener("change", refresh);
-$("order").addEventListener("change", refresh);
-
-$("primeToggle").addEventListener("click", e => {
-    state.hidePrimes = !state.hidePrimes;
-    e.currentTarget.setAttribute("aria-pressed", String(state.hidePrimes));
-    refresh();
-});
-
-$("changeFilter").addEventListener("click", e => {
-    const btn = e.target.closest("button[data-mode]");
-    if (!btn) return;
-
-    state.changeMode = btn.dataset.mode;
-    $("changeFilter").querySelectorAll("button").forEach(b =>
-        b.setAttribute("aria-pressed", String(b === btn))
-    );
-    refresh();
-});
-
-loadAll();
-</script>
+        loadAll();
+    </script>
 </body>
+
 </html>
