@@ -14,7 +14,7 @@
   { "stat": "Fire Rate / Attack Speed", "rifle": 60.03, "shotgun": 90, "pistol": 74.7, "archgun": 60.03, "melee": 54.9,  "suffix": "%" },
   { "stat": "Projctile Speed", "rifle": 90, "shotgun": 90, "pistol": 90, "archgun": null, "melee": null,  "suffix": "%" },
   { "stat": "Initial Combo", "rifle": null, "shotgun": null, "pistol": null, "archgun": null, "melee": 24.5,  "suffix": "null" },
-  { "stat": "Physical Damage / IPS", "rifle": 119.97, "shotgun": 119.97, "pistol": 1, "archgun": 8, "melee": 15,  "suffix": "%" },
+  { "stat": "Physical Damage / IPS", "rifle": 119.97, "shotgun": 119.97, "pistol": 119.97, "archgun": 90, "melee": 119.97,  "suffix": "%" },
   { "stat": "Magazine Capacity", "rifle": 49.995, "shotgun": 49.995, "pistol": 49.995, "archgun": 60.3, "melee": null,  "suffix": "%" },
   { "stat": "Heavy Attack Efficiency", "rifle": null, "shotgun": null, "pistol": null, "archgun": null, "melee": 73.44,  "suffix": "%" },
   { "stat": "Heavy Attack Wind Up Speed", "rifle": null, "shotgun": null, "pistol": null, "archgun": null, "melee": 119.7,  "suffix": "%" },
