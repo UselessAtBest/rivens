@@ -6,7 +6,7 @@
   { "stat": "Ammo Maximum", "rifle": 49.95, "shotgun": 90, "pistol": 90, "archgun": 99.9, "melee": null,  "suffix": "%" },
   { "stat": "Critical Chance", "rifle": 149.99, "shotgun": 90, "pistol": 149.99, "archgun": 99.9, "melee": 180,  "suffix": "%" },
   { "stat": "Critical Chance On Slide", "rifle": null, "shotgun": null, "pistol": null, "archgun": null, "melee": 15,  "suffix": "%" },
-  { "stat": "Critical Damage", "rifle": 119.997, "shotgun": 90, "pistol": 10, "archgun": 80.1, "melee": 90,  "suffix": "%" },
+  { "stat": "Critical Damage", "rifle": 119.997, "shotgun": 90, "pistol": 90, "archgun": 80.1, "melee": 90,  "suffix": "%" },
   { "stat": "Damage", "rifle": 165, "shotgun": 164.7, "pistol": 219.6, "archgun": 99.9, "melee": 164.7,  "suffix": "%" },
   { "stat": "Elemental Damage", "rifle": 90, "shotgun": 90, "pistol": 90, "archgun": 119.7, "melee": 90,  "suffix": "%", "noNegative": true },
   { "stat": "Faction Damage", "rifle": 1.45, "shotgun": 1.45, "pistol": 1.45, "archgun": 1.45, "melee": 1.45,  "suffix": "x" },
