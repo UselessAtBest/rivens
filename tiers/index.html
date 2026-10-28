@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Formula Calculator</title>
+
+    <!-- Adjust this path to point to your existing stylesheet -->
+    <link rel="stylesheet" href="../style.css">
+
+</head>
+
+<body>
+    <main>
+        <h1>Crit damage tier calc</h1>
+        <p class="sub">
+            
+        </p>
+
+        <div class="calculator-input">
+            <label for="inputValue">Critical Damage</label>
+            <input
+                type="number"
+                id="inputValue"
+                value="1"
+                step="any"
+                inputmode="decimal"
+            >
+            <p class="formula">
+                Result = 1 + Crit Multiplier * (Critical Damage − 1)
+            </p>
+        </div>
+
+        <h2>Results</h2>
+
+<table class="results">
+    <thead>
+        <tr>
+            <th>Critical Tier</th>
+            <th>Final Multiplier</th>
+        </tr>
+    </thead>
+    <tbody id="results"></tbody>
+</table>
+    </main>
+
+    <script>
+        const input = document.getElementById("inputValue");
+        const results = document.getElementById("results");
+
+function calculate() {
+    const e1 = Number(input.value);
+    results.replaceChildren();
+
+    if (input.value.trim() === "" || !Number.isFinite(e1)) {
+        return;
+    }
+
+    for (let a = 1; a <= 10; a++) {
+        const result = 1 + (a * (e1 - 1));
+
+        const row = document.createElement("tr");
+
+        const aValue = document.createElement("td");
+        aValue.textContent = a;
+
+        const output = document.createElement("td");
+        output.textContent = Number(result.toFixed(10)).toString();
+
+        row.append(aValue, output);
+        results.appendChild(row);
+    }
+}
+
+        input.addEventListener("input", calculate);
+        calculate();
+    </script>
+</body>
+</html>
