@@ -10,14 +10,14 @@
 
 <body>
   <main>
-    <h1>Riven Stats calculator</h1>
+    <h1>Riven Stats Calculator</h1>
 
     <h2>Weapon Type</h2>
     <div class="btns" id="cats"></div>
     <h2>Stats Format</h2>
-    <div class="btns" id=""></div>
+    <div class="btns" id="mults"></div>
 
-    <div class="tools"><input type="search" id="q" placeholder="Search by name or number" aria-label="Search results">
+    <div class="tools"><input type="search" id="q" placeholder="Search by stat" aria-label="Search results">
     </div>
     <p class="count" id="count"></p>
     <ul id="list"></ul>
@@ -26,7 +26,7 @@
 
   <script>
     var CATEGORIES = ["Rifle", "Shotgun", "Pistol", "Archgun", "Melee"];
-    var  = [
+    var MULTS = [
       { label: "++", value: 0.99 },
       { label: "++ / -", value: 1.2375 },
       { label: "+++", value: 0.75 },
@@ -39,7 +39,7 @@
     var LOW = 0.9, HIGH = 1.1, BASE = 1.2;
     var DATA = [];
     var cat = CATEGORIES[0], mult = 3;
-    var cats = document.getElementById("cats"),  = document.getElementById(""),
+    var cats = document.getElementById("cats"), mults = document.getElementById("mults"),
       list = document.getElementById("list"), q = document.getElementById("q"),
       count = document.getElementById("count");
 
@@ -77,7 +77,7 @@
     }
     makeGroup(cats, CATEGORIES.map(function (c) { return { html: c }; }),
       function (i) { return CATEGORIES[i] === cat; }, function (i) { cat = CATEGORIES[i]; });
-    makeGroup(, .map(function (m) { return { html: m.label }; }),
+    makeGroup(mults, MULTS.map(function (m) { return { html: m.label }; }),
       function (i) { return i === mult; }, function (i) { mult = i; });
 
     var altBtn = document.createElement("button");
@@ -90,12 +90,12 @@
       altBtn.setAttribute("aria-pressed", alt ? "true" : "false");
       render();
     };
-    .appendChild(altBtn);
+    mults.appendChild(altBtn);
 
     q.oninput = render;
 
     function render() {
-      var m = alt ? ALT_VALUES[mult] : [mult].value,
+      var m = alt ? ALT_VALUES[mult] : MULTS[mult].value,
         term = q.value.trim().toLowerCase(), num = parseFloat(term);
       var rows = [];
       DATA.forEach(function (d) {
@@ -116,7 +116,7 @@
         if (!isNaN(num) && num >= r.low && num <= r.high) return true;
         return r.text.toLowerCase().indexOf(term) > -1;
       });
-      count.textContent = rows.length + (rows.length === 1 ? " result" : " results");
+      count.textContent = rows.length + (rows.length === 1 ? " stat" : " stats");
       list.innerHTML = "";
       if (!rows.length) {
         var li = document.createElement("li");
