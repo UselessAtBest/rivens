@@ -13,16 +13,16 @@
 
 @media (prefers-color-scheme:dark) {
     :root:not([data-theme="light"]) {
-        --bg: linear-gradient(120deg, #322947, #624A91, #2f215a);
+        --bg: linear-gradient(120deg, #100d16, #413063, #1c1336);
         --oldsurface: #302550;
         --ink: #e8eee9;
-        --muted: #2f215a;
+        --muted: #543c9c;
         --line: #49387c;
         --accent: #be66e0;
         --accent-ink: #fff;
         color-scheme: dark;
         --surface: #3025508c;
-        --title: #302550;
+        --title: #594594;
     }
 }
 
@@ -42,7 +42,8 @@
 }
 
 html {
-    scroll-padding-top: env(safe-area-inset-top, 0px)
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+    scrollbar-gutter: stable;
 }
 
 body {
@@ -166,23 +167,26 @@ ul {
     list-style: none;
     margin: 0;
     padding: 0;
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    background: var(--surface);
-    overflow: hidden;
-    backdrop-filter: blur(24px) saturate(1.4);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-x: clip;
 }
 
 li {
     display: flex;
+    flex: none;
     justify-content: space-between;
     gap: 12px;
     padding: 12px 16px;
-    border-top: 1px solid var(--line);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    overflow: hidden;
 }
 
-li:first-child {
-    border-top: 0
+li.leaving {
+    pointer-events: none;
 }
 
 li span:last-child {
