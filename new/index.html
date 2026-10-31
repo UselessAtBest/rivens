@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Riven Stats</title>
+  <link rel="icon" type="image/webp" href="/favicon.webp">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <main>
+    <div class="new-h1">
+      <h1>Riven Stats</h1>
+    </div>
+
+    <h2>Weapon Type</h2>
+    <div class="btns" id="cats"></div>
+    <h2>Stats Format</h2>
+    <div class="btns" id="mults"></div>
+
+    <div class="tools"><input type="search" id="q" placeholder="Search by stat" aria-label="Search results">
+    </div>
+
+    <div class="tools">
+      <input type="search" id="paste" readonly placeholder="Paste screenshot here (Ctrl + V)"
+        aria-label="Paste riven screenshot">
+      <button type="button" class="btn" id="paste-clear" hidden>Clear</button>
+    </div>
+    <div class="pastepreview">
+      <img id="paste-preview" alt="Pasted riven screenshot" hidden>
+      </div>
+    <p class="count" id="count"></p>
+    <ul id="list"></ul>
+
+  </main>
+
+  <script>
+    var CATEGORIES = ["Rifle", "Shotgun", "Pistol", "Archgun", "Melee"];
+    var MULTS = [
+      { label: "++", value: 0.99 },
+      { label: "++ / -", value: 1.2375 },
+      { label: "+++", value: 0.75 },
+      { label: "+++ / -", value: 0.9375 }
+    ];
+
+    var ALT_VALUES = [0, -0.495, 0, -0.75];
+    var ALT_LABEL = "Negatives";
+    var alt = false;
+    var LOW = 0.9, HIGH = 1.1, BASE = 1.2;
+    var DATA = [];
+    var cat = CATEGORIES[0], mult = 3;
+    var cats = document.getElementById("cats"), mults = document.getElementById("mults"),
+      list = document.getElementById("list"), q = document.getElementById("q"),
+      count = document.getElementById("count");
+
+    var els = {};        // stat key -> its <li>
+    var emptyEl = null;  // the "Nothing matches" <li>, if showing
+
+    // ---- animation settings ----
+    var DUR = 280;
+    var EASE = "cubic-bezier(.2, .7, .2, 1)";
+    var LEAVE_EASE = "cubic-bezier(.45, 0, .25, 1)";
+    var GAP = 8; // must match the gap on the ul in style.css
+    var SLIDE_IN_FROM = "-100%";  // rows enter from the left
+    var SLIDE_OUT_TO = "100%";    // rows exit to the right
+    var REDUCED = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var onlyStats = null;  // Set of stat names to show, or null for all
+    var statOrder = null;   // stat name -> position on the screenshot
+    var grades = null;   // stat name -> {letter, value, title}
+
+    function applyGrade(el, name) {
+      var host = el.firstChild, g = host.querySelector(".grade"),
+        info = grades && grades[name.trim()];
+      if (!info) { if (g) host.removeChild(g); return; }
+      if (!g) { g = document.createElement("span"); host.appendChild(g); }
+      g.className = "grade g-" + info.letter;
+      g.textContent = info.letter + " " + info.value;
+      g.title = info.title;
+    }
+
+    function collapsed(x) {
+      return {
+        height: "0px", opacity: 0,
+        paddingTop: "0px", paddingBottom: "0px",
+        borderTopWidth: "0px", borderBottomWidth: "0px",
+        marginBottom: "-" + GAP + "px",
+        transform: "translateX(" + x + ")"
+      };
+    }
+
+    function statValue(d, category) {
+      var want = category.toLowerCase();
+      for (var k in d) {
+        if (k.toLowerCase() === want && typeof d[k] === "number") return d[k];
+      }
+      return null;
+    }
+
+    function fmt(n) { return (Math.round(n * 100) / 100).toString(); }
+
+    function fmtSigned(n, suffix) {
+      var r = Math.round(n * 100) / 100;
+      if (r === 0) return "0" + suffix;
+      return (r > 0 ? "+" : "-") + Math.abs(r) + suffix;
+    }
+
+    function makeGroup(parent, items, isOn, onPick) {
+      items.forEach(function (it, i) {
+        var b = document.createElement("button");
+        b.type = "button"; b.className = "btn";
+        b.innerHTML = it.html;
+        b.onclick = function () { onPick(i); sync(); render(); };
+        parent.appendChild(b);
+      });
+      function sync() {
+        [].slice.call(parent.children, 0, items.length).forEach(function (b, i) {
+          b.setAttribute("aria-pressed", isOn(i) ? "true" : "false");
+        });
+      }
+      sync();
+    }
+    makeGroup(cats, CATEGORIES.map(function (c) { return { html: c }; }),
+      function (i) { return CATEGORIES[i] === cat; }, function (i) { cat = CATEGORIES[i]; });
+    makeGroup(mults, MULTS.map(function (m) { return { html: m.label }; }),
+      function (i) { return i === mult; }, function (i) { mult = i; });
+
+    var altBtn = document.createElement("button");
+    altBtn.type = "button";
+    altBtn.className = "btn toggle-red";
+    altBtn.textContent = ALT_LABEL;
+    altBtn.setAttribute("aria-pressed", alt ? "true" : "false");
+    altBtn.onclick = function () {
+      alt = !alt;
+      altBtn.setAttribute("aria-pressed", alt ? "true" : "false");
+      render();
+    };
+    mults.appendChild(altBtn);
+
+    q.oninput = render;
+
+    // ---- animation helpers ----
+
+    // Slide new rows in from the left while growing to their natural height.
+    // Measure everything first, then start animations (avoids layout thrash).
+    function playEnter(items) {
+      if (REDUCED || !items.length || !items[0].animate) return;
+      var measured = items.map(function (el) {
+        var cs = getComputedStyle(el);
+        return {
+          el: el,
+          to: {
+            height: el.offsetHeight + "px", opacity: 1,
+            paddingTop: cs.paddingTop, paddingBottom: cs.paddingBottom,
+            borderTopWidth: cs.borderTopWidth, borderBottomWidth: cs.borderBottomWidth,
+            marginBottom: "0px", transform: "translateX(0)"
+          }
+        };
+      });
+      measured.forEach(function (x, i) {
+        x.el.animate([collapsed(SLIDE_IN_FROM), x.to], {
+          duration: DUR,
+          easing: EASE,
+          delay: Math.min(i * 18, 180),
+          fill: "backwards" // hold the offscreen look during the stagger delay
+        });
+      });
+    }
+
+    // Slide rows out to the right from their current look, then remove them.
+    function playLeave(items) {
+      if (!items.length) return;
+      var measured = items.map(function (el) {
+        var cs = getComputedStyle(el);
+        return {
+          el: el,
+          from: {
+            height: el.offsetHeight + "px", opacity: cs.opacity,
+            paddingTop: cs.paddingTop, paddingBottom: cs.paddingBottom,
+            borderTopWidth: cs.borderTopWidth, borderBottomWidth: cs.borderBottomWidth,
+            marginBottom: cs.marginBottom, transform: cs.transform
+          }
+        };
+      });
+      measured.forEach(function (x) {
+        var el = x.el;
+        function remove() { if (el.parentNode) el.parentNode.removeChild(el); }
+        el.classList.add("leaving");
+        if (REDUCED || !el.animate) { remove(); return; }
+        var a = el.animate([x.from, collapsed(SLIDE_OUT_TO)], { duration: DUR, easing: LEAVE_EASE, fill: "forwards" });
+        a.onfinish = remove;
+      });
+    }
+
+    function nextLive(node) {
+      while (node && node.classList.contains("leaving")) node = node.nextSibling;
+      return node;
+    }
+
+    function render() {
+      var m = alt ? ALT_VALUES[mult] : MULTS[mult].value,
+        term = q.value.trim().toLowerCase(), num = parseFloat(term);
+      var rows = [], seen = {};
+      DATA.forEach(function (d) {
+        var v = statValue(d, cat);
+        if (v === null) return;
+        if (onlyStats && !onlyStats.has(d.stat.trim())) return;
+        if (alt && d.noNegative === true) return;
+        var suffix = typeof d.suffix === "string" ? d.suffix : "";
+        var lo = v * LOW * BASE * m, hi = v * HIGH * BASE * m;
+        var key = d.stat;
+        seen[key] = (seen[key] || 0) + 1;
+        if (seen[key] > 1) key += "#" + seen[key];
+        rows.push({
+          key: key,
+          name: d.stat,
+          text: fmtSigned(lo, suffix) + " → " + fmtSigned(hi, suffix),
+          low: Math.min(lo, hi), high: Math.max(lo, hi)
+        });
+      });
+      rows = rows.filter(function (r) {
+        if (!term) return true;
+        if (r.name.toLowerCase().indexOf(term) > -1) return true;
+        if (!isNaN(num) && num >= r.low && num <= r.high) return true;
+        return r.text.toLowerCase().indexOf(term) > -1;
+      });
+      if (statOrder) {
+        rows.sort(function (x, y) {
+          return (statOrder[x.name.trim()] ?? 99) - (statOrder[y.name.trim()] ?? 99);
+        });
+      }
+      count.textContent = rows.length + (rows.length === 1 ? " stat" : " stats");
+
+      // Work out which rows are leaving
+      var keep = {}, leaving = [];
+      rows.forEach(function (r) { keep[r.key] = true; });
+      Object.keys(els).forEach(function (k) {
+        if (!keep[k]) { leaving.push(els[k]); delete els[k]; }
+      });
+
+      if (!rows.length) {
+        playLeave(leaving);
+        if (!emptyEl) {
+          emptyEl = document.createElement("li");
+          emptyEl.className = "empty";
+          emptyEl.textContent = "Nothing matches.";
+          list.appendChild(emptyEl);
+          playEnter([emptyEl]);
+        }
+        return;
+      }
+      if (emptyEl) { leaving.push(emptyEl); emptyEl = null; }
+      playLeave(leaving);
+
+      // Add new rows, update existing ones, keep order without moving rows that are already in place
+      var cursor = nextLive(list.firstChild), entering = [];
+      rows.forEach(function (r) {
+        var el = els[r.key];
+        if (!el) {
+          el = document.createElement("li");
+          var a = document.createElement("span"); a.textContent = r.name;
+          var b = document.createElement("span"); b.textContent = r.text;
+          el.appendChild(a); el.appendChild(b);
+          els[r.key] = el;
+          entering.push(el);
+        } else {
+          el.lastChild.textContent = r.text;
+        }
+        applyGrade(el, r.name);
+        if (el === cursor) cursor = nextLive(cursor.nextSibling);
+        else list.insertBefore(el, cursor);
+      });
+      playEnter(entering);
+    }
+
+    fetch("data.json")
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (j) {
+        DATA = j.filter(function (d) { return d && d.stat; });
+        render();
+      })
+      .catch(function (err) {
+        list.innerHTML = "";
+        els = {}; emptyEl = null;
+        var li = document.createElement("li");
+        li.className = "empty err";
+        li.textContent = "No data.json (" + err.message + "). Contact Useless.";
+        list.appendChild(li);
+      });
+    render();
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js"></script>
+
+  <script>
+    (() => {
+      const input = document.getElementById("paste");
+      const clearBtn = document.getElementById("paste-clear");
+      const preview = document.getElementById("paste-preview");
+      if (!input || !clearBtn || !preview) return;
+
+      let statsData = [], weaponsData = [], previewUrl = null;
+
+      const EXTRA_ALIASES = {
+        "Faction Damage": ["damage to grineer", "damage to corpus", "damage to infested", "damage to corrupted", "damage to sentient"],
+        "Physical Damage / IPS": ["impact damage", "puncture damage", "slash damage", "impact", "puncture", "slash"],
+        "Elemental Damage": ["heat damage", "cold damage", "electricity damage", "toxin damage", "heat", "cold", "electricity", "toxin", "viral", "blast", "corrosive", "gas", "radiation", "magnetic"],
+        "Critical Chance On Slide": ["critical chance for slide attack", "slide attack"],
+        "Additional Combo Count Chance": ["chance to gain extra combo count"],
+        "Weakpoint Damage": ["weak point damage"],
+        "Weakpoint Critical Chance": ["weak point critical chance"]
+      };
+
+      // ---------- status / apply / clear ----------
+      function say(msg) { input.value = msg; }
+
+      function applyResult(weapon, found, graded) {
+        onlyStats = new Set(found.map(f => f.stat.stat));
+        statOrder = {};
+        found.forEach((f, i) => { statOrder[f.stat.stat] = i; });
+        grades = graded ? graded.map : null;
+        clearBtn.hidden = false;
+        if (alt) altBtn.click();                          // negatives mode would hide stats
+        const ci = CATEGORIES.findIndex(c => c.toLowerCase() === weapon.type.toLowerCase());
+        if (ci > -1) cats.children[ci].click();
+        if (graded) mults.children[graded.f].click();
+        render();
+      }
+
+      function clearFilter() {
+        onlyStats = null;
+        grades = null;
+        statOrder = null;
+        clearBtn.hidden = true;
+        input.value = "";
+        preview.hidden = true;
+        if (previewUrl) { URL.revokeObjectURL(previewUrl); previewUrl = null; }
+        render();
+      }
+      clearBtn.addEventListener("click", clearFilter);
+
+      // ---------- data loading ----------
+      const dataReady = Promise.all([
+        fetch("data.json").then(r => { if (!r.ok) throw new Error("data.json: HTTP " + r.status); return r.json(); }),
+        fetch("weapons.json").then(r => { if (!r.ok) throw new Error("weapons.json: HTTP " + r.status); return r.json(); })
+      ]).then(([stats, weapons]) => {
+        statsData = stats.map(s => ({ ...s, stat: s.stat.trim() }));
+        weaponsData = weapons.map(w => ({ ...w, key: normalize(w.name) }));
+        statsData.forEach(s => { s.aliases = buildAliases(s.stat); });
+      }).catch(err => { say("Error loading JSON: " + err.message); console.error(err); throw err; });
+
+      // ---------- text helpers ----------
+      function normalize(v) { return String(v).toLowerCase().replace(/[^a-z0-9]/g, ""); }
+      function lettersOnly(v) { return String(v).toLowerCase().replace(/[^a-z]/g, ""); }
+      function fold(s) { return s.replace(/0/g, "o").replace(/1/g, "l"); }
+      function lev(a, b) {
+        const m = Array.from({ length: a.length + 1 }, (_, i) => [i]);
+        for (let j = 1; j <= b.length; j++) m[0][j] = j;
+        for (let i = 1; i <= a.length; i++)
+          for (let j = 1; j <= b.length; j++)
+            m[i][j] = Math.min(m[i - 1][j] + 1, m[i][j - 1] + 1,
+              m[i - 1][j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1));
+        return m[a.length][b.length];
+      }
+      function sim(a, b) {
+        if (!a || !b) return 0;
+        if (a === b) return 1;
+        const raw = 1 - lev(a, b) / Math.max(a.length, b.length);
+        const fa = fold(a), fb = fold(b);
+        const folded = fa === fb ? 1 : 1 - lev(fa, fb) / Math.max(fa.length, fb.length);
+        return Math.max(raw, folded);
+      }
+
+      // ---------- weapon matching ----------
+      function findWeapon(lines) {
+        let best = null, bestScore = 0;
+        for (const line of lines) {
+          const words = line.split(/\s+/).filter(Boolean);
+          for (let n = 1; n <= 4; n++) {
+            for (let i = 0; i + n <= words.length; i++) {
+              const phrase = normalize(words.slice(i, i + n).join(""));
+              if (phrase.length < 2) continue;
+              for (const w of weaponsData) {
+                if (Math.abs(w.key.length - phrase.length) > 3) continue;
+                const s = sim(phrase, w.key);
+                if (w.key.length <= 3 && s < 1) continue;
+                if (s > bestScore || (s === bestScore && best && w.key.length > best.key.length)) {
+                  best = w; bestScore = s;
+                }
+              }
+            }
+          }
+        }
+        return bestScore >= 0.8 ? best : null;
+      }
+
+      // ---------- stat matching ----------
+      function buildAliases(name) {
+        const list = name.split("/").map(lettersOnly);
+        (EXTRA_ALIASES[name] || []).forEach(a => list.push(lettersOnly(a)));
+        return [...new Set(list.filter(Boolean))];
+      }
+      const NUM_RE = /[-+]?\d+(?:[.,]\d+)?/;
+      const NUM_RE_G = /[-+]?\d+(?:[.,]\d+)?\s*%?/g;
+
+      function findStat(text, categoryKey) {
+        const clean = text.replace(NUM_RE_G, " ");
+        const letters = lettersOnly(clean);
+        const tokens = clean.toLowerCase().split(/[^a-z]+/).filter(Boolean);
+        if (letters.length < 3) return null;
+        let best = null, bestScore = 0;
+        for (const stat of statsData) {
+          if (typeof stat[categoryKey] !== "number") continue;
+          for (const alias of stat.aliases) {
+            let score = 0;
+            if (alias.length <= 4) {
+              if (tokens.includes(alias)) score = 1 + alias.length / 100;
+            } else if (letters.includes(alias)) {
+              score = 1 + alias.length / 100;
+            } else {
+              const s = sim(letters, alias);
+              if (s >= 0.8) score = s;
+            }
+            if (score > bestScore) { best = stat; bestScore = score; }
+          }
+        }
+        return best ? { stat: best, score: bestScore } : null;
+      }
+
+      function parseNumber(line) {
+        const m = line.match(NUM_RE);
+        if (!m) return null;
+        const raw = m[0].replace(",", ".");
+        const v = Number(raw);
+        if (!Number.isFinite(v)) return null;
+        return {
+          mag: Math.abs(v),
+          digits: raw.replace(/^[-+]/, ""),
+          sign: raw[0] === "-" || raw[0] === "+" ? raw[0] : ""
+        };
+      }
+      // Is v a valid roll for this stat in any format (positive or drawback)?
+      function plausible(stat, categoryKey, v) {
+        const b = stat[categoryKey] * BASE;
+        for (let f = 0; f < MULTS.length; f++) {
+          for (const m of [MULTS[f].value, ALT_VALUES[f]]) {
+            if (!m) continue;
+            const x = Math.abs(b * m);
+            if (v >= x * LOW * 0.97 && v <= x * HIGH * 1.03) return true;
+          }
+        }
+        return false;
+      }
+
+      const CONFUSABLE = { "0": "86", "1": "7", "3": "8", "4": "9", "5": "6", "6": "58", "7": "1", "8": "3609", "9": "4" };
+
+      // If the OCR number can't be a valid roll, try single-character repairs.
+      function repairNumber(stat, categoryKey, num) {
+        if (plausible(stat, categoryKey, num.mag)) return num;
+        const s = num.digits, tries = [];
+
+        for (let i = 0; i < s.length; i++)                       // extra digit
+          if (/\d/.test(s[i])) tries.push(s.slice(0, i) + s.slice(i + 1));
+        if (!s.includes("."))                                    // missing decimal point
+          for (let i = 1; i < s.length; i++) tries.push(s.slice(0, i) + "." + s.slice(i));
+        for (let i = 0; i < s.length; i++)                       // look-alike digit
+          for (const c of CONFUSABLE[s[i]] || "") tries.push(s.slice(0, i) + c + s.slice(i + 1));
+
+        for (const t of tries) {
+          const v = Number(t);
+          if (Number.isFinite(v) && v > 0 && plausible(stat, categoryKey, v)) {
+            console.log("OCR value corrected:", stat.stat, s, "->", t);
+            return { ...num, mag: v, fixed: true, was: s };
+          }
+        }
+        return num;   // nothing fits, so it will be graded "?"
+      }
+
+      const hasLetters = s => lettersOnly(s.replace(NUM_RE_G, " ")).length >= 3;
+
+      const STAT_LINE_RE = /^\W{0,2}[-+]?\d+(?:[.,]\d+)?(?:\s*%\s*|\s*[xms]?\s+)[A-Za-z]{3,}/;
+      const countStatLines = lines => lines.filter(l => STAT_LINE_RE.test(l)).length;
+
+      function extractStats(lines, categoryKey) {
+        const found = [], used = new Set();
+        lines.forEach((line, i) => {
+          const prev = lines[i - 1] || "", next = lines[i + 1] || "";
+
+          // single line, or the line plus a wrapped continuation (no digits, has text)
+          let hit = findStat(line, categoryKey);
+          if (!NUM_RE.test(next) && hasLetters(next)) {
+            const joined = findStat(line + " " + next, categoryKey);
+            if (joined && (!hit || joined.score > hit.score)) hit = joined;
+          }
+          if (!hit || used.has(hit.stat.stat)) return;
+
+          // number: this line, else a number-only neighbour line
+          let num = parseNumber(line);
+          if (!num && !hasLetters(prev)) num = parseNumber(prev);
+          if (!num && !hasLetters(next)) num = parseNumber(next);
+          if (!num) return;
+
+          num = repairNumber(hit.stat, categoryKey, num);
+          used.add(hit.stat.stat);
+          found.push({ stat: hit.stat, mag: num.mag, sign: num.sign, fixed: num.fixed, was: num.was });
+        });
+        return found;
+      }
+
+      // ---------- grading ----------
+      function letterFor(q, over) {
+        if (over > 0.1) return "?";
+        return q >= 0.95 ? "S" : q >= 0.8 ? "A" : q >= 0.6 ? "B" : q >= 0.4 ? "C" : q >= 0.2 ? "D" : "F";
+      }
+
+      function gradeStats(found, categoryKey, total, force) {
+        const n = Math.min(4, Math.max(found.length, total || 0));
+        let formats;
+        if (force != null) formats = [force];
+        else if (found.length > 4) formats = [];
+        else formats = n === 2 ? [0] : n === 3 ? [1, 2] : n === 4 ? [3] : [];
+        const missing = found.length < n;     // a stat line was seen but not matched
+        let best = null;
+
+        for (const f of formats) {
+          const hasNeg = ALT_VALUES[f] !== 0;
+          const negChoices = hasNeg
+            ? found.map((_, i) => i).concat(missing ? [-1] : [])
+            : [-1];
+          for (const ni of negChoices) {
+            let pen = 0;
+            const out = found.map((it, i) => {
+              const neg = i === ni;
+              const m = neg ? ALT_VALUES[f] : MULTS[f].value;
+              const base = it.stat[categoryKey] * BASE * m;
+              const a = Math.abs(base * LOW), b = Math.abs(base * HIGH);
+              const lo = Math.min(a, b), hi = Math.max(a, b);
+              const p = (it.mag - lo) / (hi - lo);
+              const over = p < 0 ? -p : p > 1 ? p - 1 : 0;
+              const expSign = Math.sign(base);
+              const explicit = it.sign === "-" ? -1 : it.sign === "+" ? 1 : 0;
+              pen += over + (explicit && explicit !== expSign ? 0.25 : 0);
+              return { p: Math.min(1, Math.max(0, p)), over, neg, expSign, lo, hi };
+            });
+            if (!best || pen < best.pen) best = { f, pen, out };
+          }
+        }
+        if (!best) return null;
+
+        const map = {};
+        found.forEach((it, i) => {
+          const o = best.out[i];
+          const q = o.neg ? 1 - o.p : o.p;
+          const suffix = typeof it.stat.suffix === "string" && it.stat.suffix !== "null" ? it.stat.suffix : "";
+          map[it.stat.stat] = {
+            letter: letterFor(q, o.over),
+            value: fmtSigned(o.expSign * it.mag, suffix),
+            title: "Roll quality " + Math.round(q * 100) + "% (range " +
+              fmt(o.lo) + " to " + fmt(o.hi) + suffix + (o.neg ? ", drawback" : "") + ")" +
+              (it.fixed ? ". OCR read " + it.was + ", corrected" : "")
+          };
+        });
+        return { f: best.f, map };
+      }
+
+      // ---------- analyze OCR text ----------
+      function summary(weapon, found, total, graded, manual) {
+        return weapon.name + " (" + weapon.type + "): " + found.length + " stats" +
+          (total > found.length ? " of " + total + " read" : "") +
+          (graded ? ", " + MULTS[graded.f].label + (manual ? " (manual)" : "") : ", could not grade");
+      }
+
+      async function analyze(text) {
+        await dataReady;
+        const lines = text.replace(/[\u2212\u2013\u2014]/g, "-")
+          .split("\n").map(l => l.trim()).filter(Boolean);
+
+        const weapon = findWeapon(lines);
+        if (!weapon) { say("Weapon not recognized, try another screenshot"); return; }
+
+        const categoryKey = weapon.type.toLowerCase();
+        const found = extractStats(lines, categoryKey);
+        console.log("OCR lines:", lines, "matched:", found.map(f => f.stat.stat));
+
+        if (!found.length) { say(weapon.name + ": no stats recognized"); return; }
+
+        const total = countStatLines(lines);
+        last = { weapon, found, categoryKey, total };
+        const graded = gradeStats(found, categoryKey, total);
+        applyResult(weapon, found, graded);
+        say(summary(weapon, found, total, graded, false));
+      }
+
+      // ---------- OCR ----------
+      let workerPromise = null;
+      const getWorker = () => (workerPromise ||= (async () => {
+        const w = await Tesseract.createWorker("eng");
+        await w.setParameters({
+          tessedit_pageseg_mode: "6",                 // one block of text
+          preserve_interword_spaces: "1",
+          tessedit_char_whitelist:
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-.,%&' "
+        });
+        return w;
+      })());
+
+      async function prepare(file) {
+        const bmp = await createImageBitmap(file);
+        const scale = Math.max(1, Math.min(4, Math.floor(3000 / bmp.width)));
+        const c = document.createElement("canvas");
+        c.width = bmp.width * scale; c.height = bmp.height * scale;
+        const ctx = c.getContext("2d");
+        ctx.imageSmoothingQuality = "high";
+        ctx.drawImage(bmp, 0, 0, c.width, c.height);
+
+        const img = ctx.getImageData(0, 0, c.width, c.height), d = img.data;
+        const hist = new Uint32Array(256);
+        let sum = 0;
+        for (let i = 0; i < d.length; i += 4) {                  // grayscale
+          const g = Math.round(0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2]);
+          d[i] = g; hist[g]++; sum += g;
+        }
+        const px = d.length / 4, dark = sum / px < 128;
+        let acc = 0, lo = 0, hi = 255;                           // 1%..99% contrast stretch
+        for (let v = 0; v < 256; v++) { acc += hist[v]; if (acc >= px * 0.01) { lo = v; break; } }
+        acc = 0;
+        for (let v = 255; v >= 0; v--) { acc += hist[v]; if (acc >= px * 0.01) { hi = v; break; } }
+        const span = Math.max(1, hi - lo);
+        for (let i = 0; i < d.length; i += 4) {
+          let g = Math.min(255, Math.max(0, (d[i] - lo) * 255 / span));
+          if (dark) g = 255 - g;                                 // dark UI becomes dark text on white
+          d[i] = d[i + 1] = d[i + 2] = g;
+        }
+        ctx.putImageData(img, 0, 0);
+        return c;
+      }
+      let last = null;   // last analyzed riven, for manual format regrading
+
+      async function handleImage(file) {
+        if (previewUrl) URL.revokeObjectURL(previewUrl);
+        previewUrl = URL.createObjectURL(file);
+        preview.src = previewUrl;
+        preview.hidden = false;
+        clearBtn.hidden = false;
+        say("Reading screenshot...");
+        try {
+          const worker = await getWorker();
+          const { data } = await worker.recognize(await prepare(file));
+          await analyze(data.text);
+        } catch (err) {
+          say("OCR failed, try another screenshot");
+          console.error(err);
+        }
+      }
+
+      document.addEventListener("paste", e => {
+        for (const item of e.clipboardData?.items || []) {
+          if (item.type.startsWith("image/")) {
+            const f = item.getAsFile();
+            if (f) handleImage(f);
+            break;
+          }
+        }
+      });
+
+          [...mults.children].slice(0, MULTS.length).forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        if (!last || !onlyStats) return;
+        const graded = gradeStats(last.found, last.categoryKey, last.total, i);
+        grades = graded ? graded.map : null;
+        say(summary(last.weapon, last.found, last.total, graded, true));
+        render();
+      });
+    });
+
+    })();
+
+
+
+  </script>
+</body>
+
+</html>

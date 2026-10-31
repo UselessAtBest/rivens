@@ -1,0 +1,329 @@
+:root {
+    --bg: #f3f5f2;
+    --surface: #fff;
+    --ink: #1c2420;
+    --muted: #66726b;
+    --line: #d5dcd7;
+    --accent: #ad35dd;
+    --accent-ink: #fff;
+    box-sizing: border-box;
+    padding-top: env(safe-area-inset-top, 0px);
+    padding-bottom: env(safe-area-inset-bottom, 0px)
+}
+
+@media (prefers-color-scheme:dark) {
+    :root:not([data-theme="light"]) {
+        --bg: linear-gradient(120deg, #100d16, #413063, #1c1336);
+        --oldsurface: #302550;
+        --ink: #e8eee9;
+        --muted: #543c9c;
+        --line: #49387c;
+        --accent: #be66e0;
+        --accent-ink: #fff;
+        color-scheme: dark;
+        --surface: #3025508c;
+        --title: #594594;
+    }
+}
+
+:root[data-theme="dark"] {
+    --bg: #141a17;
+    --surface: #1c2420;
+    --ink: #e8eee9;
+    --muted: #93a199;
+    --line: #33403a;
+    --accent: #5bc59c;
+    --accent-ink: #0d1a14;
+    color-scheme: dark
+}
+
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-padding-top: env(safe-area-inset-top, 0px);
+    scrollbar-gutter: stable;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    height: fit-content;
+    min-height: 100vh;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+main {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 28px 18px 48px
+}
+
+h1 {
+    font-size: 3rem;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    margin: -10px 0 0px;
+    letter-spacing: -.01em;
+    color: transparent;
+    background: repeating-linear-gradient(90deg,
+            #4d2c8f ,
+            #59487a ,
+            #8e7cc5 ,
+            white ,
+            #8e7cc5,
+            #59487a,
+            #4d2c8f );
+    background-size: 200% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+
+    animation: flow 5s linear infinite;
+}
+
+
+@keyframes flow {
+    from {
+        background-position: 0% 0;
+    }
+
+    to {
+        background-position: 200% 0;
+    }
+}
+
+
+p.sub {
+    margin: 0 0 20px;
+    color: var(--muted)
+}
+
+h2 {
+    font-size: .95rem;
+    margin: 20px 0 8px;
+    color: var(--muted);
+    font-weight: 600
+}
+
+.btns {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.btn {
+    font: inherit;
+    padding: 9px 16px;
+    border: 1px solid var(--line);
+    border-radius: 35px;
+    background: var(--surface);
+    color: var(--ink);
+    cursor: pointer;
+    font-variant-numeric: tabular-nums;
+    -webkit-tap-highlight-color: transparent;
+
+}
+
+.btns .btn {
+    flex: 1 1 auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .18);
+    transition:
+        flex-grow .25s ease,
+        border-radius .25s ease,
+        background-color .2s ease,
+        box-shadow .25s ease;
+}
+
+.btns .btn:not(.toggle-red)[aria-pressed="true"] {
+    flex-grow: 2.5;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, .3);
+    font-weight: bold;
+}
+
+.btn small {
+    color: var(--muted);
+    margin-left: 6px;
+    font-size: .78rem
+}
+
+.btn[aria-pressed="true"] {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: var(--accent-ink)
+}
+
+.btn[aria-pressed="true"] small {
+    color: inherit;
+    opacity: .85
+}
+
+:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px
+}
+
+.tools {
+    display: flex;
+    gap: 8px;
+    margin: 22px 0 12px
+}
+
+input[type=search] {
+    flex: 1;
+    min-width: 0;
+    font: inherit;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--ink)
+}
+
+.count {
+    color: var(--muted);
+    font-size: .85rem;
+    margin: 0 10px 6px
+}
+
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    overflow-x: clip;
+}
+
+li {
+    display: flex;
+    flex: none;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    background: var(--surface);
+    overflow: hidden;
+}
+
+li.leaving {
+    pointer-events: none;
+}
+
+li span:last-child {
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap
+}
+
+li em {
+    color: var(--muted);
+    font-style: normal;
+    font-size: .85rem;
+    margin-left: 8px
+}
+
+.empty {
+    padding: 18px 16px;
+    color: var(--muted)
+}
+
+.err {
+    color: #c0392b
+}
+
+.btn.toggle-red {
+    border-color: #c0392b;
+    color: #fff;
+}
+
+.btn.toggle-red[aria-pressed="true"] {
+    background: #c0392b;
+    border-color: #c0392b;
+    color: #fff;
+
+}
+
+.calculator-input {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin: 20px 0;
+}
+
+.calculator-input label {
+    font-weight: 600;
+}
+
+input[type="number"] {
+    width: 100%;
+    font: inherit;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--ink);
+}
+
+.results {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    overflow: hidden;
+    background: var(--surface);
+}
+
+.results th,
+.results td {
+    padding: 12px 16px;
+    text-align: left;
+    border-bottom: 1px solid var(--line);
+}
+
+.results th {
+    color: var(--muted);
+    font-size: .85rem;
+    font-weight: 600;
+}
+
+.results tr:last-child td {
+    border-bottom: 0;
+}
+
+.results td:last-child {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+}
+
+.formula {
+    color: var(--muted);
+    font-size: .9rem;
+    margin-top: 6px;
+}
+
+.pastepreview {
+    display:flex;
+    justify-content: center;
+
+}
+
+
+#paste-preview { display: block; max-width: 100%; max-height: 320px; margin: .5rem 0; border-radius: 8px; align-items: center;}
+#paste-preview[hidden] { display: none; }
+
+.grade { margin-left: .6rem; padding: .1rem .5rem; border-radius: 6px; font-size: .85em; font-weight: 600;
+         background: rgba(128,128,128,.18); white-space: nowrap; }
+.grade.g-S { background: rgba(255,190,40,.28); }
+.grade.g-A { background: rgba(60,190,90,.25); }
+.grade.g-B { background: rgba(80,160,240,.25); }
+.grade.g-C { background: rgba(160,160,160,.25); }
+.grade.g-D, .grade.g-F { background: rgba(230,80,80,.25); }
+.grade.g-\? { background: rgba(128,128,128,.12); }

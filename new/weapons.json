@@ -1,0 +1,2406 @@
+[
+  {
+    "name": "Acceltra",
+    "type": "Rifle"
+  },
+  {
+    "name": "Acceltra Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Ack & Brunt",
+    "type": "Melee"
+  },
+  {
+    "name": "Acrid",
+    "type": "Pistol"
+  },
+  {
+    "name": "Aegrit",
+    "type": "Pistol"
+  },
+  {
+    "name": "Aeolak",
+    "type": "Rifle"
+  },
+  {
+    "name": "Afentis",
+    "type": "Rifle"
+  },
+  {
+    "name": "Afentis Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Afuris",
+    "type": "Pistol"
+  },
+  {
+    "name": "Afuris Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akarius",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akarius Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akbolto",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akbolto Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akbronco",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akbronco Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akjagara",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akjagara Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Aklato",
+    "type": "Pistol"
+  },
+  {
+    "name": "Aklex",
+    "type": "Pistol"
+  },
+  {
+    "name": "Aklex Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akmagnus",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akmagnus Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Aksomati",
+    "type": "Pistol"
+  },
+  {
+    "name": "Aksomati Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Aksondol",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akstiletto",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akstiletto Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akvasto",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akvasto Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Akzani",
+    "type": "Pistol"
+  },
+  {
+    "name": "Alternox",
+    "type": "Rifle"
+  },
+  {
+    "name": "Alternox Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Amanata",
+    "type": "Melee"
+  },
+  {
+    "name": "Ambassador",
+    "type": "Rifle"
+  },
+  {
+    "name": "Amphis",
+    "type": "Melee"
+  },
+  {
+    "name": "Amprex",
+    "type": "Rifle"
+  },
+  {
+    "name": "Angstrum",
+    "type": "Pistol"
+  },
+  {
+    "name": "Anku",
+    "type": "Melee"
+  },
+  {
+    "name": "Ankyros",
+    "type": "Melee"
+  },
+  {
+    "name": "Ankyros Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Arbucep",
+    "type": "Archgun"
+  },
+  {
+    "name": "Arca Plasmor",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Arca Scisco",
+    "type": "Pistol"
+  },
+  {
+    "name": "Arca Titron",
+    "type": "Melee"
+  },
+  {
+    "name": "Argo & Vel",
+    "type": "Melee"
+  },
+  {
+    "name": "Argonak",
+    "type": "Rifle"
+  },
+  {
+    "name": "Arum Spinosa",
+    "type": "Melee"
+  },
+  {
+    "name": "Astilla",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Astilla Prime",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Athodai",
+    "type": "Pistol"
+  },
+  {
+    "name": "Athodai Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Atomos",
+    "type": "Pistol"
+  },
+  {
+    "name": "Atterax",
+    "type": "Melee"
+  },
+  {
+    "name": "Attica",
+    "type": "Rifle"
+  },
+  {
+    "name": "Ax-52",
+    "type": "Rifle"
+  },
+  {
+    "name": "Azima",
+    "type": "Pistol"
+  },
+  {
+    "name": "Azothane",
+    "type": "Melee"
+  },
+  {
+    "name": "Balla",
+    "type": "Melee"
+  },
+  {
+    "name": "Ballistica",
+    "type": "Pistol"
+  },
+  {
+    "name": "Ballistica Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Basmu",
+    "type": "Rifle"
+  },
+  {
+    "name": "Battacor",
+    "type": "Rifle"
+  },
+  {
+    "name": "Baza",
+    "type": "Rifle"
+  },
+  {
+    "name": "Baza Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Bo",
+    "type": "Melee"
+  },
+  {
+    "name": "Bo Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Boar",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Boar Prime",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Boltace",
+    "type": "Melee"
+  },
+  {
+    "name": "Bolto",
+    "type": "Pistol"
+  },
+  {
+    "name": "Boltor",
+    "type": "Rifle"
+  },
+  {
+    "name": "Boltor Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Brakk",
+    "type": "Pistol"
+  },
+  {
+    "name": "Braton",
+    "type": "Rifle"
+  },
+  {
+    "name": "Braton Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Braton Vandal",
+    "type": "Rifle"
+  },
+  {
+    "name": "Broken Scepter",
+    "type": "Melee"
+  },
+  {
+    "name": "Broken War",
+    "type": "Melee"
+  },
+  {
+    "name": "Bronco",
+    "type": "Pistol"
+  },
+  {
+    "name": "Bronco Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Bubonico",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Burston",
+    "type": "Rifle"
+  },
+  {
+    "name": "Burston Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Buzlok",
+    "type": "Rifle"
+  },
+  {
+    "name": "Cadus",
+    "type": "Melee"
+  },
+  {
+    "name": "Cantare",
+    "type": "Pistol"
+  },
+  {
+    "name": "Carmine Penta",
+    "type": "Rifle"
+  },
+  {
+    "name": "Cassowar",
+    "type": "Melee"
+  },
+  {
+    "name": "Castanas",
+    "type": "Pistol"
+  },
+  {
+    "name": "Catabolyst",
+    "type": "Pistol"
+  },
+  {
+    "name": "Caustacyst",
+    "type": "Melee"
+  },
+  {
+    "name": "Cedo",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Cedo Prime",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Ceramic Dagger",
+    "type": "Melee"
+  },
+  {
+    "name": "Cerata",
+    "type": "Melee"
+  },
+  {
+    "name": "Cernos",
+    "type": "Rifle"
+  },
+  {
+    "name": "Cernos Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Cestra",
+    "type": "Pistol"
+  },
+  {
+    "name": "Ceti Lacera",
+    "type": "Melee"
+  },
+  {
+    "name": "Cinta",
+    "type": "Rifle"
+  },
+  {
+    "name": "Cobra & Crane",
+    "type": "Melee"
+  },
+  {
+    "name": "Cobra & Crane Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Coda Bassocyst",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Coda Bubonico",
+    "type": "Rifle"
+  },
+  {
+    "name": "Coda Catabolyst",
+    "type": "Pistol"
+  },
+  {
+    "name": "Coda Caustacyst",
+    "type": "Melee"
+  },
+  {
+    "name": "Coda Hema",
+    "type": "Rifle"
+  },
+  {
+    "name": "Coda Hirudo",
+    "type": "Melee"
+  },
+  {
+    "name": "Coda Mire",
+    "type": "Melee"
+  },
+  {
+    "name": "Coda Motovore",
+    "type": "Melee"
+  },
+  {
+    "name": "Coda Pathocyst",
+    "type": "Melee"
+  },
+  {
+    "name": "Coda Pox",
+    "type": "Pistol"
+  },
+  {
+    "name": "Coda Sporothrix",
+    "type": "Rifle"
+  },
+  {
+    "name": "Coda Synapse",
+    "type": "Rifle"
+  },
+  {
+    "name": "Coda Tysis",
+    "type": "Pistol"
+  },
+  {
+    "name": "Convectrix",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Corinth",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Corinth Prime",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Cortege",
+    "type": "Archgun"
+  },
+  {
+    "name": "Corufell",
+    "type": "Melee"
+  },
+  {
+    "name": "Corufell Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Corvas",
+    "type": "Archgun"
+  },
+  {
+    "name": "Corvas Prime",
+    "type": "Archgun"
+  },
+  {
+    "name": "Cronus",
+    "type": "Melee"
+  },
+  {
+    "name": "Cyanex",
+    "type": "Pistol"
+  },
+  {
+    "name": "Cyath",
+    "type": "Melee"
+  },
+  {
+    "name": "Cycron",
+    "type": "Pistol"
+  },
+  {
+    "name": "Cyngas",
+    "type": "Archgun"
+  },
+  {
+    "name": "Daikyu",
+    "type": "Rifle"
+  },
+  {
+    "name": "Daikyu Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Dakra Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Dark Dagger",
+    "type": "Melee"
+  },
+  {
+    "name": "Dark Split-Sword",
+    "type": "Melee"
+  },
+  {
+    "name": "Dark Sword",
+    "type": "Melee"
+  },
+  {
+    "name": "Dehtat",
+    "type": "Melee"
+  },
+  {
+    "name": "Dera",
+    "type": "Rifle"
+  },
+  {
+    "name": "Dera Vandal",
+    "type": "Rifle"
+  },
+  {
+    "name": "Despair",
+    "type": "Pistol"
+  },
+  {
+    "name": "Destreza",
+    "type": "Melee"
+  },
+  {
+    "name": "Destreza Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Detron",
+    "type": "Pistol"
+  },
+  {
+    "name": "Dex Dakra",
+    "type": "Melee"
+  },
+  {
+    "name": "Dex Furis",
+    "type": "Pistol"
+  },
+  {
+    "name": "Dex Nikana",
+    "type": "Melee"
+  },
+  {
+    "name": "Dex Sybaris",
+    "type": "Rifle"
+  },
+  {
+    "name": "Dokrahm",
+    "type": "Melee"
+  },
+  {
+    "name": "Dorrclave",
+    "type": "Melee"
+  },
+  {
+    "name": "Dragon Nikana",
+    "type": "Melee"
+  },
+  {
+    "name": "Drakgoon",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Dread",
+    "type": "Rifle"
+  },
+  {
+    "name": "Dual Cestra",
+    "type": "Pistol"
+  },
+  {
+    "name": "Dual Cleavers",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Coda Torxica",
+    "type": "Pistol"
+  },
+  {
+    "name": "Dual Decurion",
+    "type": "Archgun"
+  },
+  {
+    "name": "Dual Ether",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Heat Swords",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Ichor",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Kamas",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Kamas Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Keres",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Keres Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Raza",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Skana",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Toxocyst",
+    "type": "Pistol"
+  },
+  {
+    "name": "Dual Viciss",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Zoren",
+    "type": "Melee"
+  },
+  {
+    "name": "Dual Zoren Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Edun",
+    "type": "Melee"
+  },
+  {
+    "name": "Efv-5 Jupiter",
+    "type": "Rifle"
+  },
+  {
+    "name": "Efv-8 Mars",
+    "type": "Pistol"
+  },
+  {
+    "name": "Ekhein",
+    "type": "Melee"
+  },
+  {
+    "name": "Embolist",
+    "type": "Pistol"
+  },
+  {
+    "name": "Endura",
+    "type": "Melee"
+  },
+  {
+    "name": "Enkaus",
+    "type": "Rifle"
+  },
+  {
+    "name": "Epitaph",
+    "type": "Pistol"
+  },
+  {
+    "name": "Epitaph Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Ether Daggers",
+    "type": "Melee"
+  },
+  {
+    "name": "Ether Reaper",
+    "type": "Melee"
+  },
+  {
+    "name": "Ether Sword",
+    "type": "Melee"
+  },
+  {
+    "name": "Euphona Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Evensong",
+    "type": "Rifle"
+  },
+  {
+    "name": "Exergis",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Falcor",
+    "type": "Melee"
+  },
+  {
+    "name": "Fang",
+    "type": "Melee"
+  },
+  {
+    "name": "Fang Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Felarx",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Ferrox",
+    "type": "Rifle"
+  },
+  {
+    "name": "Fluctus",
+    "type": "Archgun"
+  },
+  {
+    "name": "Flux Rifle",
+    "type": "Rifle"
+  },
+  {
+    "name": "Fragor",
+    "type": "Melee"
+  },
+  {
+    "name": "Fragor Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Fulmin",
+    "type": "Rifle"
+  },
+  {
+    "name": "Fulmin Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Furax",
+    "type": "Melee"
+  },
+  {
+    "name": "Furax Wraith",
+    "type": "Melee"
+  },
+  {
+    "name": "Furis",
+    "type": "Pistol"
+  },
+  {
+    "name": "Fusilai",
+    "type": "Pistol"
+  },
+  {
+    "name": "Galariak Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Galatine",
+    "type": "Melee"
+  },
+  {
+    "name": "Galatine Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Galvacord",
+    "type": "Melee"
+  },
+  {
+    "name": "Gammacor",
+    "type": "Pistol"
+  },
+  {
+    "name": "Gazal Machete",
+    "type": "Melee"
+  },
+  {
+    "name": "Ghoulsaw",
+    "type": "Melee"
+  },
+  {
+    "name": "Glaive",
+    "type": "Melee"
+  },
+  {
+    "name": "Glaive Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Glaxion",
+    "type": "Rifle"
+  },
+  {
+    "name": "Glaxion Vandal",
+    "type": "Rifle"
+  },
+  {
+    "name": "Gorgon",
+    "type": "Rifle"
+  },
+  {
+    "name": "Gorgon Wraith",
+    "type": "Rifle"
+  },
+  {
+    "name": "Gotva Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Grakata",
+    "type": "Rifle"
+  },
+  {
+    "name": "Gram",
+    "type": "Melee"
+  },
+  {
+    "name": "Gram Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Grattler",
+    "type": "Archgun"
+  },
+  {
+    "name": "Grimoire",
+    "type": "Pistol"
+  },
+  {
+    "name": "Grinlok",
+    "type": "Rifle"
+  },
+  {
+    "name": "Guandao",
+    "type": "Melee"
+  },
+  {
+    "name": "Guandao Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Gunsen",
+    "type": "Melee"
+  },
+  {
+    "name": "Gunsen Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Haalvu",
+    "type": "Rifle"
+  },
+  {
+    "name": "Halikar",
+    "type": "Melee"
+  },
+  {
+    "name": "Halikar Wraith",
+    "type": "Melee"
+  },
+  {
+    "name": "Harmony",
+    "type": "Melee"
+  },
+  {
+    "name": "Harpak",
+    "type": "Rifle"
+  },
+  {
+    "name": "Hate",
+    "type": "Melee"
+  },
+  {
+    "name": "Heat Dagger",
+    "type": "Melee"
+  },
+  {
+    "name": "Heat Sword",
+    "type": "Melee"
+  },
+  {
+    "name": "Hek",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Heliocor",
+    "type": "Melee"
+  },
+  {
+    "name": "Hema",
+    "type": "Rifle"
+  },
+  {
+    "name": "Hespar",
+    "type": "Melee"
+  },
+  {
+    "name": "Higasa",
+    "type": "Rifle"
+  },
+  {
+    "name": "Hikou",
+    "type": "Pistol"
+  },
+  {
+    "name": "Hikou Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Hind",
+    "type": "Rifle"
+  },
+  {
+    "name": "Hirudo",
+    "type": "Melee"
+  },
+  {
+    "name": "Hystrix",
+    "type": "Pistol"
+  },
+  {
+    "name": "Hystrix Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Ignis",
+    "type": "Rifle"
+  },
+  {
+    "name": "Ignis Wraith",
+    "type": "Rifle"
+  },
+  {
+    "name": "Imperator",
+    "type": "Archgun"
+  },
+  {
+    "name": "Imperator Vandal",
+    "type": "Archgun"
+  },
+  {
+    "name": "Innodem",
+    "type": "Melee"
+  },
+  {
+    "name": "Jat Kittag",
+    "type": "Melee"
+  },
+  {
+    "name": "Jat Kusar",
+    "type": "Melee"
+  },
+  {
+    "name": "Javlok",
+    "type": "Rifle"
+  },
+  {
+    "name": "Jaw Sword",
+    "type": "Melee"
+  },
+  {
+    "name": "Kama",
+    "type": "Melee"
+  },
+  {
+    "name": "Karak",
+    "type": "Rifle"
+  },
+  {
+    "name": "Karak Wraith",
+    "type": "Rifle"
+  },
+  {
+    "name": "Karyst",
+    "type": "Melee"
+  },
+  {
+    "name": "Karyst Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Keratinos",
+    "type": "Melee"
+  },
+  {
+    "name": "Kesheg",
+    "type": "Melee"
+  },
+  {
+    "name": "Kestrel",
+    "type": "Melee"
+  },
+  {
+    "name": "Kestrel Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Knell",
+    "type": "Pistol"
+  },
+  {
+    "name": "Knell Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Kogake",
+    "type": "Melee"
+  },
+  {
+    "name": "Kogake Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Kohm",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Kohmak",
+    "type": "Pistol"
+  },
+  {
+    "name": "Komorex",
+    "type": "Rifle"
+  },
+  {
+    "name": "Kompressa",
+    "type": "Pistol"
+  },
+  {
+    "name": "Kompressa Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Korrudo",
+    "type": "Melee"
+  },
+  {
+    "name": "Korumm",
+    "type": "Melee"
+  },
+  {
+    "name": "Kraken",
+    "type": "Pistol"
+  },
+  {
+    "name": "Kreska",
+    "type": "Melee"
+  },
+  {
+    "name": "Krohkur",
+    "type": "Melee"
+  },
+  {
+    "name": "Kronen",
+    "type": "Melee"
+  },
+  {
+    "name": "Kronen Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Kronsh",
+    "type": "Melee"
+  },
+  {
+    "name": "Kulstar",
+    "type": "Pistol"
+  },
+  {
+    "name": "Kunai",
+    "type": "Pistol"
+  },
+  {
+    "name": "Kuva Ayanga",
+    "type": "Archgun"
+  },
+  {
+    "name": "Kuva Brakk",
+    "type": "Pistol"
+  },
+  {
+    "name": "Kuva Bramma",
+    "type": "Rifle"
+  },
+  {
+    "name": "Kuva Chakkhurr",
+    "type": "Rifle"
+  },
+  {
+    "name": "Kuva Drakgoon",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Kuva Ghoulsaw",
+    "type": "Melee"
+  },
+  {
+    "name": "Kuva Grattler",
+    "type": "Archgun"
+  },
+  {
+    "name": "Kuva Hek",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Kuva Hind",
+    "type": "Rifle"
+  },
+  {
+    "name": "Kuva Karak",
+    "type": "Rifle"
+  },
+  {
+    "name": "Kuva Kohm",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Kuva Kraken",
+    "type": "Pistol"
+  },
+  {
+    "name": "Kuva Nukor",
+    "type": "Pistol"
+  },
+  {
+    "name": "Kuva Ogris",
+    "type": "Rifle"
+  },
+  {
+    "name": "Kuva Quartakk",
+    "type": "Rifle"
+  },
+  {
+    "name": "Kuva Seer",
+    "type": "Pistol"
+  },
+  {
+    "name": "Kuva Shildeg",
+    "type": "Melee"
+  },
+  {
+    "name": "Kuva Sobek",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Kuva Tonkor",
+    "type": "Rifle"
+  },
+  {
+    "name": "Kuva Twin Stubbas",
+    "type": "Pistol"
+  },
+  {
+    "name": "Kuva Zarr",
+    "type": "Rifle"
+  },
+  {
+    "name": "Lacera",
+    "type": "Melee"
+  },
+  {
+    "name": "Laetum",
+    "type": "Pistol"
+  },
+  {
+    "name": "Lanka",
+    "type": "Rifle"
+  },
+  {
+    "name": "Larkspur",
+    "type": "Archgun"
+  },
+  {
+    "name": "Larkspur Prime",
+    "type": "Archgun"
+  },
+  {
+    "name": "Lato",
+    "type": "Pistol"
+  },
+  {
+    "name": "Lato Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Lato Vandal",
+    "type": "Pistol"
+  },
+  {
+    "name": "Latron",
+    "type": "Rifle"
+  },
+  {
+    "name": "Latron Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Latron Wraith",
+    "type": "Rifle"
+  },
+  {
+    "name": "Lecta",
+    "type": "Melee"
+  },
+  {
+    "name": "Lenz",
+    "type": "Rifle"
+  },
+  {
+    "name": "Lesion",
+    "type": "Melee"
+  },
+  {
+    "name": "Lex",
+    "type": "Pistol"
+  },
+  {
+    "name": "Lex Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Machete",
+    "type": "Melee"
+  },
+  {
+    "name": "Machete Wraith",
+    "type": "Melee"
+  },
+  {
+    "name": "Magistar",
+    "type": "Melee"
+  },
+  {
+    "name": "Magnus",
+    "type": "Pistol"
+  },
+  {
+    "name": "Magnus Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Mandonel",
+    "type": "Archgun"
+  },
+  {
+    "name": "Mara Detron",
+    "type": "Pistol"
+  },
+  {
+    "name": "Marelok",
+    "type": "Pistol"
+  },
+  {
+    "name": "Masseter",
+    "type": "Melee"
+  },
+  {
+    "name": "Masseter Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Mausolon",
+    "type": "Archgun"
+  },
+  {
+    "name": "Mewan",
+    "type": "Melee"
+  },
+  {
+    "name": "Mios",
+    "type": "Melee"
+  },
+  {
+    "name": "Mire",
+    "type": "Melee"
+  },
+  {
+    "name": "Miter",
+    "type": "Rifle"
+  },
+  {
+    "name": "Mk1-Bo",
+    "type": "Melee"
+  },
+  {
+    "name": "Mk1-Braton",
+    "type": "Rifle"
+  },
+  {
+    "name": "Mk1-Furax",
+    "type": "Melee"
+  },
+  {
+    "name": "Mk1-Furis",
+    "type": "Pistol"
+  },
+  {
+    "name": "Mk1-Kunai",
+    "type": "Pistol"
+  },
+  {
+    "name": "Mk1-Paris",
+    "type": "Rifle"
+  },
+  {
+    "name": "Mk1-Strun",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Morgha",
+    "type": "Archgun"
+  },
+  {
+    "name": "Mutalist Cernos",
+    "type": "Rifle"
+  },
+  {
+    "name": "Mutalist Quanta",
+    "type": "Rifle"
+  },
+  {
+    "name": "Nagantaka",
+    "type": "Rifle"
+  },
+  {
+    "name": "Nagantaka Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Nami Skyla",
+    "type": "Melee"
+  },
+  {
+    "name": "Nami Skyla Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Nami Solo",
+    "type": "Melee"
+  },
+  {
+    "name": "Nataruk",
+    "type": "Rifle"
+  },
+  {
+    "name": "Nepheri",
+    "type": "Melee"
+  },
+  {
+    "name": "Nikana",
+    "type": "Melee"
+  },
+  {
+    "name": "Nikana Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Ninkondi",
+    "type": "Melee"
+  },
+  {
+    "name": "Ninkondi Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Nukor",
+    "type": "Pistol"
+  },
+  {
+    "name": "Nunchasa",
+    "type": "Rifle"
+  },
+  {
+    "name": "Obex",
+    "type": "Melee"
+  },
+  {
+    "name": "Ocucor",
+    "type": "Pistol"
+  },
+  {
+    "name": "Ogris",
+    "type": "Rifle"
+  },
+  {
+    "name": "Ohma",
+    "type": "Melee"
+  },
+  {
+    "name": "Okina",
+    "type": "Melee"
+  },
+  {
+    "name": "Okina Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Onos",
+    "type": "Pistol"
+  },
+  {
+    "name": "Ooltha",
+    "type": "Melee"
+  },
+  {
+    "name": "Opticor",
+    "type": "Rifle"
+  },
+  {
+    "name": "Opticor Vandal",
+    "type": "Rifle"
+  },
+  {
+    "name": "Orthos",
+    "type": "Melee"
+  },
+  {
+    "name": "Orthos Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Orvius",
+    "type": "Melee"
+  },
+  {
+    "name": "Pandero",
+    "type": "Pistol"
+  },
+  {
+    "name": "Pandero Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Pangolin Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Pangolin Sword",
+    "type": "Melee"
+  },
+  {
+    "name": "Panthera",
+    "type": "Rifle"
+  },
+  {
+    "name": "Panthera Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Paracesis",
+    "type": "Melee"
+  },
+  {
+    "name": "Paracyst",
+    "type": "Rifle"
+  },
+  {
+    "name": "Paris",
+    "type": "Rifle"
+  },
+  {
+    "name": "Paris Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Pathocyst",
+    "type": "Melee"
+  },
+  {
+    "name": "Pennant",
+    "type": "Melee"
+  },
+  {
+    "name": "Penta",
+    "type": "Rifle"
+  },
+  {
+    "name": "Perigale",
+    "type": "Rifle"
+  },
+  {
+    "name": "Perigale Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Phaedra",
+    "type": "Archgun"
+  },
+  {
+    "name": "Phage",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Phantasma",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Phantasma Prime",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Phenmor",
+    "type": "Rifle"
+  },
+  {
+    "name": "Plague Keewar",
+    "type": "Melee"
+  },
+  {
+    "name": "Plague Kripath",
+    "type": "Melee"
+  },
+  {
+    "name": "Plasma Sword",
+    "type": "Melee"
+  },
+  {
+    "name": "Plinx",
+    "type": "Pistol"
+  },
+  {
+    "name": "Pox",
+    "type": "Pistol"
+  },
+  {
+    "name": "Praedos",
+    "type": "Melee"
+  },
+  {
+    "name": "Pride",
+    "type": "Melee"
+  },
+  {
+    "name": "Prisma Angstrum",
+    "type": "Pistol"
+  },
+  {
+    "name": "Prisma Dual Cleavers",
+    "type": "Melee"
+  },
+  {
+    "name": "Prisma Dual Decurions",
+    "type": "Archgun"
+  },
+  {
+    "name": "Prisma Gorgon",
+    "type": "Rifle"
+  },
+  {
+    "name": "Prisma Grakata",
+    "type": "Rifle"
+  },
+  {
+    "name": "Prisma Grinlok",
+    "type": "Rifle"
+  },
+  {
+    "name": "Prisma Lenz",
+    "type": "Rifle"
+  },
+  {
+    "name": "Prisma Machete",
+    "type": "Melee"
+  },
+  {
+    "name": "Prisma Obex",
+    "type": "Melee"
+  },
+  {
+    "name": "Prisma Ohma",
+    "type": "Melee"
+  },
+  {
+    "name": "Prisma Skana",
+    "type": "Melee"
+  },
+  {
+    "name": "Prisma Tetra",
+    "type": "Rifle"
+  },
+  {
+    "name": "Prisma Twin Gremlins",
+    "type": "Pistol"
+  },
+  {
+    "name": "Proboscis Cernos",
+    "type": "Rifle"
+  },
+  {
+    "name": "Prova",
+    "type": "Melee"
+  },
+  {
+    "name": "Prova Vandal",
+    "type": "Melee"
+  },
+  {
+    "name": "Pulmonars",
+    "type": "Melee"
+  },
+  {
+    "name": "Pupacyst",
+    "type": "Melee"
+  },
+  {
+    "name": "Purgator 1",
+    "type": "Rifle"
+  },
+  {
+    "name": "Pyrana",
+    "type": "Pistol"
+  },
+  {
+    "name": "Pyrana Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Quanta",
+    "type": "Rifle"
+  },
+  {
+    "name": "Quanta Vandal",
+    "type": "Rifle"
+  },
+  {
+    "name": "Quartakk",
+    "type": "Rifle"
+  },
+  {
+    "name": "Quassus",
+    "type": "Melee"
+  },
+  {
+    "name": "Quassus Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Quatz",
+    "type": "Pistol"
+  },
+  {
+    "name": "Quellor",
+    "type": "Rifle"
+  },
+  {
+    "name": "Rabvee",
+    "type": "Melee"
+  },
+  {
+    "name": "Rakta Ballistica",
+    "type": "Pistol"
+  },
+  {
+    "name": "Rakta Cernos",
+    "type": "Rifle"
+  },
+  {
+    "name": "Rakta Dark Dagger",
+    "type": "Melee"
+  },
+  {
+    "name": "Rauta",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Reaper Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Reconifex",
+    "type": "Rifle"
+  },
+  {
+    "name": "Redeemer",
+    "type": "Melee"
+  },
+  {
+    "name": "Redeemer Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Riot-848",
+    "type": "Pistol"
+  },
+  {
+    "name": "Ripkas",
+    "type": "Melee"
+  },
+  {
+    "name": "Rubico",
+    "type": "Rifle"
+  },
+  {
+    "name": "Rubico Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Rumblejack",
+    "type": "Melee"
+  },
+  {
+    "name": "Ruvox",
+    "type": "Melee"
+  },
+  {
+    "name": "Sagek Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Sampotes",
+    "type": "Melee"
+  },
+  {
+    "name": "Sancti Castanas",
+    "type": "Pistol"
+  },
+  {
+    "name": "Sancti Magistar",
+    "type": "Melee"
+  },
+  {
+    "name": "Sancti Tigris",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Sarofang",
+    "type": "Melee"
+  },
+  {
+    "name": "Sarofang Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Sarpa",
+    "type": "Melee"
+  },
+  {
+    "name": "Scindo",
+    "type": "Melee"
+  },
+  {
+    "name": "Scindo Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Scoliac",
+    "type": "Melee"
+  },
+  {
+    "name": "Scourge",
+    "type": "Rifle"
+  },
+  {
+    "name": "Scourge Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Scyotid",
+    "type": "Pistol"
+  },
+  {
+    "name": "Secura Dual Cestra",
+    "type": "Pistol"
+  },
+  {
+    "name": "Secura Lecta",
+    "type": "Melee"
+  },
+  {
+    "name": "Secura Penta",
+    "type": "Rifle"
+  },
+  {
+    "name": "Seer",
+    "type": "Pistol"
+  },
+  {
+    "name": "Sepfahn",
+    "type": "Melee"
+  },
+  {
+    "name": "Sepulcrum",
+    "type": "Pistol"
+  },
+  {
+    "name": "Serro",
+    "type": "Melee"
+  },
+  {
+    "name": "Shaku",
+    "type": "Melee"
+  },
+  {
+    "name": "Shedu",
+    "type": "Rifle"
+  },
+  {
+    "name": "Sheev",
+    "type": "Melee"
+  },
+  {
+    "name": "Sibear",
+    "type": "Melee"
+  },
+  {
+    "name": "Sicarus",
+    "type": "Pistol"
+  },
+  {
+    "name": "Sicarus Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Sigma & Octantis",
+    "type": "Melee"
+  },
+  {
+    "name": "Silva & Aegis",
+    "type": "Melee"
+  },
+  {
+    "name": "Silva & Aegis Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Simulor",
+    "type": "Rifle"
+  },
+  {
+    "name": "Sirocco",
+    "type": "Rifle"
+  },
+  {
+    "name": "Skana",
+    "type": "Melee"
+  },
+  {
+    "name": "Skana Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Skiajati",
+    "type": "Melee"
+  },
+  {
+    "name": "Slaytra",
+    "type": "Melee"
+  },
+  {
+    "name": "Snipetron",
+    "type": "Rifle"
+  },
+  {
+    "name": "Snipetron Vandal",
+    "type": "Rifle"
+  },
+  {
+    "name": "Sobek",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Soma",
+    "type": "Rifle"
+  },
+  {
+    "name": "Soma Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Sonicor",
+    "type": "Pistol"
+  },
+  {
+    "name": "Spectra",
+    "type": "Pistol"
+  },
+  {
+    "name": "Spectra Vandal",
+    "type": "Pistol"
+  },
+  {
+    "name": "Spinnerex",
+    "type": "Melee"
+  },
+  {
+    "name": "Spira",
+    "type": "Pistol"
+  },
+  {
+    "name": "Spira Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Sporothrix",
+    "type": "Rifle"
+  },
+  {
+    "name": "Stahlta",
+    "type": "Rifle"
+  },
+  {
+    "name": "Staticor",
+    "type": "Pistol"
+  },
+  {
+    "name": "Steflos",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Steflos Prime",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Stradavar",
+    "type": "Rifle"
+  },
+  {
+    "name": "Stradavar Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Stropha",
+    "type": "Melee"
+  },
+  {
+    "name": "Strun",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Strun Prime",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Strun Wraith",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Stubba",
+    "type": "Pistol"
+  },
+  {
+    "name": "Stug",
+    "type": "Pistol"
+  },
+  {
+    "name": "Sun & Moon",
+    "type": "Melee"
+  },
+  {
+    "name": "Supra",
+    "type": "Rifle"
+  },
+  {
+    "name": "Supra Vandal",
+    "type": "Rifle"
+  },
+  {
+    "name": "Syam",
+    "type": "Melee"
+  },
+  {
+    "name": "Sybaris",
+    "type": "Rifle"
+  },
+  {
+    "name": "Sybaris Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Sydon",
+    "type": "Melee"
+  },
+  {
+    "name": "Synapse",
+    "type": "Rifle"
+  },
+  {
+    "name": "Synoid Gammacor",
+    "type": "Pistol"
+  },
+  {
+    "name": "Synoid Heliocor",
+    "type": "Melee"
+  },
+  {
+    "name": "Synoid Simulor",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tak & Lug",
+    "type": "Melee"
+  },
+  {
+    "name": "Talons",
+    "type": "Pistol"
+  },
+  {
+    "name": "Tatsu",
+    "type": "Melee"
+  },
+  {
+    "name": "Tatsu Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Tekko",
+    "type": "Melee"
+  },
+  {
+    "name": "Tekko Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Telos Akbolto",
+    "type": "Pistol"
+  },
+  {
+    "name": "Telos Boltace",
+    "type": "Melee"
+  },
+  {
+    "name": "Telos Boltor",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tenet Agendus",
+    "type": "Melee"
+  },
+  {
+    "name": "Tenet Arca Plasmor",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Tenet Cycron",
+    "type": "Pistol"
+  },
+  {
+    "name": "Tenet Detron",
+    "type": "Pistol"
+  },
+  {
+    "name": "Tenet Diplos",
+    "type": "Pistol"
+  },
+  {
+    "name": "Tenet Envoy",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tenet Exec",
+    "type": "Melee"
+  },
+  {
+    "name": "Tenet Ferrox",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tenet Flux Rifle",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tenet Glaxion",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tenet Grigori",
+    "type": "Melee"
+  },
+  {
+    "name": "Tenet Livia",
+    "type": "Melee"
+  },
+  {
+    "name": "Tenet Plinx",
+    "type": "Pistol"
+  },
+  {
+    "name": "Tenet Quanta",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tenet Spirex",
+    "type": "Pistol"
+  },
+  {
+    "name": "Tenet Tetra",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tenora",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tenora Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tetra",
+    "type": "Rifle"
+  },
+  {
+    "name": "Thalys",
+    "type": "Melee"
+  },
+  {
+    "name": "Thornbak",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tiberon",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tiberon Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Tigris",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Tigris Prime",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Tipedo",
+    "type": "Melee"
+  },
+  {
+    "name": "Tipedo Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Tonbo",
+    "type": "Melee"
+  },
+  {
+    "name": "Tonkkatt",
+    "type": "Melee"
+  },
+  {
+    "name": "Tonkor",
+    "type": "Rifle"
+  },
+  {
+    "name": "Torid",
+    "type": "Rifle"
+  },
+  {
+    "name": "Trumna",
+    "type": "Rifle"
+  },
+  {
+    "name": "Trumna Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Twin Basolk",
+    "type": "Melee"
+  },
+  {
+    "name": "Twin Grakatas",
+    "type": "Pistol"
+  },
+  {
+    "name": "Twin Gremlins",
+    "type": "Pistol"
+  },
+  {
+    "name": "Twin Kohmak",
+    "type": "Pistol"
+  },
+  {
+    "name": "Twin Krohkur",
+    "type": "Melee"
+  },
+  {
+    "name": "Twin Rogga",
+    "type": "Pistol"
+  },
+  {
+    "name": "Twin Vipers",
+    "type": "Pistol"
+  },
+  {
+    "name": "Twin Vipers Wraith",
+    "type": "Pistol"
+  },
+  {
+    "name": "Tysis",
+    "type": "Pistol"
+  },
+  {
+    "name": "Vadarya Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Vastilok",
+    "type": "Melee"
+  },
+  {
+    "name": "Vasto",
+    "type": "Pistol"
+  },
+  {
+    "name": "Vasto Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Vaykor Hek",
+    "type": "Shotgun"
+  },
+  {
+    "name": "Vaykor Marelok",
+    "type": "Pistol"
+  },
+  {
+    "name": "Vaykor Sydon",
+    "type": "Melee"
+  },
+  {
+    "name": "Vectis",
+    "type": "Rifle"
+  },
+  {
+    "name": "Vectis Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Veldt",
+    "type": "Rifle"
+  },
+  {
+    "name": "Velocitus",
+    "type": "Archgun"
+  },
+  {
+    "name": "Velox",
+    "type": "Pistol"
+  },
+  {
+    "name": "Velox Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Venato",
+    "type": "Melee"
+  },
+  {
+    "name": "Venato Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Venka",
+    "type": "Melee"
+  },
+  {
+    "name": "Venka Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Verdilac",
+    "type": "Melee"
+  },
+  {
+    "name": "Vericres",
+    "type": "Melee"
+  },
+  {
+    "name": "Vesper 77",
+    "type": "Pistol"
+  },
+  {
+    "name": "Vinquibus",
+    "type": "Rifle"
+  },
+  {
+    "name": "Viper",
+    "type": "Pistol"
+  },
+  {
+    "name": "Viper Wraith",
+    "type": "Pistol"
+  },
+  {
+    "name": "Vitrica",
+    "type": "Melee"
+  },
+  {
+    "name": "Volnus",
+    "type": "Melee"
+  },
+  {
+    "name": "Volnus Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Vulkar",
+    "type": "Rifle"
+  },
+  {
+    "name": "Vulkar Wraith",
+    "type": "Rifle"
+  },
+  {
+    "name": "War",
+    "type": "Melee"
+  },
+  {
+    "name": "War Prime",
+    "type": "Melee"
+  },
+  {
+    "name": "Wolf Sledge",
+    "type": "Melee"
+  },
+  {
+    "name": "Wrath",
+    "type": "Melee"
+  },
+  {
+    "name": "Xoris",
+    "type": "Melee"
+  },
+  {
+    "name": "Zakti",
+    "type": "Pistol"
+  },
+  {
+    "name": "Zakti Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Zarr",
+    "type": "Rifle"
+  },
+  {
+    "name": "Zenistar",
+    "type": "Melee"
+  },
+  {
+    "name": "Zenith",
+    "type": "Rifle"
+  },
+  {
+    "name": "Zhuge",
+    "type": "Rifle"
+  },
+  {
+    "name": "Zhuge Prime",
+    "type": "Rifle"
+  },
+  {
+    "name": "Zylok",
+    "type": "Pistol"
+  },
+  {
+    "name": "Zylok Prime",
+    "type": "Pistol"
+  },
+  {
+    "name": "Zymos",
+    "type": "Pistol"
+  }
+]
