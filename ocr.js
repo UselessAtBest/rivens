@@ -12,10 +12,6 @@ var OCR = (function () {
     var WEAPON_FUZZY_MIN = 0.85;
     var MATCH_MIN = 0.55;
     var OCR_WHITELIST = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-%./() ";
-
-    // data.json stat -> the names the riven can show for it. Each name is its own row on a
-    // graded riven (e.g. Cold Damage and Heat Damage both use the "Elemental Damage" numbers),
-    // and the name shown is the one from the riven.
     var ALIASES = {
         "Critical Chance On Slide": ["Critical Chance for Slide Attack", "Slide Attack Critical Chance"],
         "Chance to gain Combo Count": ["Chance to Gain Extra Combo Count"],
@@ -292,8 +288,6 @@ var OCR = (function () {
         var missed = [];
         var at = {};
 
-        // One candidate per data.json stat. `labels` are the names the riven can show for it
-        // (the stat's own name first, then its ALIASES); `names` are the same, normalised.
         DATA.forEach(function (d) {
             var labels = [d.stat].concat(ALIASES[d.stat] || []);
 
@@ -330,7 +324,6 @@ var OCR = (function () {
 
                         if (line.suffix === suffixOf(c.d)) s = Math.min(1, s + 0.1);
 
-                        // On an exact tie the later (riven) name wins over the data.json name.
                         if (s > top || (s === top && ni > topI)) {
                             top = s;
                             topV = v;
@@ -375,9 +368,6 @@ var OCR = (function () {
             }
 
             var hit = { d: best.d, label: best.label, line: line, score: best.score };
-
-            // Same stat shown under the same name twice = the same line read twice; keep the better read.
-            // Different names for one data.json stat (Cold + Heat Damage) are separate rows.
             var hk = best.d.stat + "|" + best.label;
 
             if (at[hk] !== undefined) {
@@ -767,7 +757,6 @@ var OCR = (function () {
             var low = Math.min(p.lo, p.hi);
             var high = Math.max(p.lo, p.hi);
 
-            // The numbers come from data.json (d); the name is the one on the riven (x.label).
             out.push({
                 key: d.stat + "|" + x.label,
                 name: x.label,
