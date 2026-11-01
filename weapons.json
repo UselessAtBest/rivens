@@ -2402,5 +2402,13 @@
   {
     "name": "Zymos",
     "type": "Pistol"
+  },
+  {
+    "name": "Lacerten",
+    "type": "Melee"
+  },
+  {
+    "name": "Verglas",
+    "type": "Rifle"
   }
 ]
