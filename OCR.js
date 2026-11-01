@@ -721,11 +721,18 @@ pasteBox.oninput = function () {
 };
 
 document.addEventListener("paste", function (e) {
+    console.log("PASTE EVENT FIRED", e.clipboardData);
+
     var items = (e.clipboardData && e.clipboardData.items) || [];
+    console.log("CLIPBOARD ITEMS:", items.length);
 
     for (var i = 0; i < items.length; i++) {
+        console.log("ITEM:", items[i].type);
+
         if (items[i].type.indexOf("image/") === 0) {
             var file = items[i].getAsFile();
+
+            console.log("IMAGE FILE:", file);
 
             if (file) {
                 e.preventDefault();
@@ -733,10 +740,6 @@ document.addEventListener("paste", function (e) {
                 return;
             }
         }
-    }
-
-    if (e.target === pasteBox) {
-        e.preventDefault();
     }
 });
 
