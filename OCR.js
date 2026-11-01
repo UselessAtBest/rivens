@@ -688,9 +688,37 @@ var OCR = (function () {
 
     clearBtn.onclick = clearShot;
 
-    pasteBox.oninput = function () {
-        pasteBox.value = "";
-    };
+pasteBox.onclick = async function () {
+    try {
+        var items = await navigator.clipboard.read();
+
+        for (var i = 0; i < items.length; i++) {
+            var imageType = items[i].types.find(function (type) {
+                return type.indexOf("image/") === 0;
+            });
+
+            if (!imageType) continue;
+
+            var blob = await items[i].getType(imageType);
+
+            var file = new File([blob], "screenshot.png", {
+                type: imageType
+            });
+
+            handleImage(file);
+            return;
+        }
+
+        setStatus("No screenshot found in clipboard. Copy an image first.");
+    } catch (err) {
+        console.error("Clipboard access failed:", err);
+        setStatus("Clipboard access blocked. Try Ctrl+V instead.");
+    }
+};
+
+pasteBox.oninput = function () {
+    pasteBox.value = "";
+};
 
     document.addEventListener("paste", function (e) {
         var items = (e.clipboardData && e.clipboardData.items) || [];
