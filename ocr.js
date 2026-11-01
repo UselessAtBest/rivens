@@ -13,14 +13,17 @@ var OCR = (function () {
     var MATCH_MIN = 0.55;
     var OCR_WHITELIST = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+-%./() ";
 
+    // data.json stat -> the names the riven can show for it. Each name is its own row on a
+    // graded riven (e.g. Cold Damage and Heat Damage both use the "Elemental Damage" numbers),
+    // and the name shown is the one from the riven.
     var ALIASES = {
         "Critical Chance On Slide": ["Critical Chance for Slide Attack", "Slide Attack Critical Chance"],
         "Chance to gain Combo Count": ["Chance to Gain Extra Combo Count"],
-        "Elemental Damage": ["Cold Damage", "Heat Damage", "Toxin Damage", "Electricity Damage"],
-        "Physical Damage / IPS": ["Impact Damage", "Puncture Damage", "Slash Damage"],
+        "Elemental Damage": ["Cold", "Heat", "Toxin", "Electricity","Magnetic", "Radiation", "Corrosive", "Blast", "Gas", "Viral"],
+        "Physical Damage / IPS": ["Impact", "Puncture", "Slash"],
         "Faction Damage": ["Damage to Grineer", "Damage to Corpus", "Damage to Infested", "Damage to Corrupted"],
         "Fire Rate / Attack Speed": ["Fire Rate", "Attack Speed"],
-        "Projctile Speed": ["Projectile Speed"],
+        "Projectile Speed": ["Projectile Speed"],
         "Weapon Recoil": ["Recoil"],
         "Weakpoint Critical Chance": ["Weak Point Critical Chance"],
         "Weakpoint Damage": ["Weak Point Damage"]
@@ -289,11 +292,16 @@ var OCR = (function () {
         var missed = [];
         var at = {};
 
+        // One candidate per data.json stat. `labels` are the names the riven can show for it
+        // (the stat's own name first, then its ALIASES); `names` are the same, normalised.
         DATA.forEach(function (d) {
+            var labels = [d.stat].concat(ALIASES[d.stat] || []);
+
             cands.push({
                 d: d,
                 avail: statValue(d, cat) !== null,
-                names: [d.stat].concat(ALIASES[d.stat] || []).map(normalize)
+                labels: labels,
+                names: labels.map(normalize)
             });
         });
 
@@ -309,9 +317,9 @@ var OCR = (function () {
             }
 
             cands.forEach(function (c) {
-                var top = 0, topV = nm;
+                var top = 0, topV = nm, topI = 0;
 
-                c.names.forEach(function (n) {
+                c.names.forEach(function (n, ni) {
                     variants.forEach(function (v) {
                         var s = Math.max(
                             similarity(v, n),
@@ -322,14 +330,16 @@ var OCR = (function () {
 
                         if (line.suffix === suffixOf(c.d)) s = Math.min(1, s + 0.1);
 
-                        if (s > top) {
+                        // On an exact tie the later (riven) name wins over the data.json name.
+                        if (s > top || (s === top && ni > topI)) {
                             top = s;
                             topV = v;
+                            topI = ni;
                         }
                     });
                 });
 
-                scored.push({ d: c.d, avail: c.avail, score: top, via: topV });
+                scored.push({ d: c.d, avail: c.avail, score: top, via: topV, label: c.labels[topI] });
             });
 
             scored.sort(function (x, y) {
@@ -349,7 +359,7 @@ var OCR = (function () {
 
             if (log) {
                 console.log("OCR match: \"" + (best ? best.via : nm) + "\" ->",
-                    best ? best.d.stat + " (" + best.score.toFixed(2) + ")" : "none",
+                    best ? best.label + (best.label !== best.d.stat ? " [" + best.d.stat + "]" : "") + " (" + best.score.toFixed(2) + ")" : "none",
                     "| runner-up:", runner ? runner.d.stat + " (" + runner.score.toFixed(2) + ")" : "none",
                     "| best unavailable for " + cat + ":", off ? off.d.stat + " (" + off.score.toFixed(2) + ")" : "none");
             }
@@ -364,17 +374,21 @@ var OCR = (function () {
                 return;
             }
 
-            var hit = { d: best.d, line: line, score: best.score };
+            var hit = { d: best.d, label: best.label, line: line, score: best.score };
 
-            if (at[best.d.stat] !== undefined) {
-                if (best.score > matched[at[best.d.stat]].score) {
-                    matched[at[best.d.stat]] = hit;
+            // Same stat shown under the same name twice = the same line read twice; keep the better read.
+            // Different names for one data.json stat (Cold + Heat Damage) are separate rows.
+            var hk = best.d.stat + "|" + best.label;
+
+            if (at[hk] !== undefined) {
+                if (best.score > matched[at[hk]].score) {
+                    matched[at[hk]] = hit;
                 }
 
                 return;
             }
 
-            at[best.d.stat] = matched.length;
+            at[hk] = matched.length;
             matched.push(hit);
         });
 
@@ -753,9 +767,10 @@ var OCR = (function () {
             var low = Math.min(p.lo, p.hi);
             var high = Math.max(p.lo, p.hi);
 
+            // The numbers come from data.json (d); the name is the one on the riven (x.label).
             out.push({
-                key: d.stat,
-                name: d.stat,
+                key: d.stat + "|" + x.label,
+                name: x.label,
                 text: fmtSigned(low, suffix) + " → " + fmtSigned(high, suffix),
                 low: low,
                 high: high,
