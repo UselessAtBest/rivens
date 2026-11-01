@@ -32,5 +32,5 @@
   { "stat": "Weapon Recoil", "rifle": -90, "shotgun": -90, "pistol": -90, "archgun": -90, "melee": null,  "suffix": "%" },
   { "stat": "Weakpoint Damage", "rifle": 225, "shotgun": 225, "pistol": 225, "archgun": 225, "melee": null,  "suffix": "%" },
   { "stat": "Weakpoint Critical Chance", "rifle": 247.5, "shotgun": 247.5, "pistol": 247.5, "archgun": 247.5, "melee": null,  "suffix": "%" },
-  { "stat": "Zoom", "rifle": 90, "shotgun": 90, "pistol": 90, "archgun": 90, "melee": null,  "suffix": "%" }
+  { "stat": "Zoom", "rifle": 59.99, "shotgun": 41.994, "pistol": 80.1, "archgun": 59.99, "melee": null,  "suffix": "%" }
 ]
