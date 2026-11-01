@@ -9,7 +9,7 @@
   { "stat": "Critical Damage", "rifle": 119.997, "shotgun": 90, "pistol": 90, "archgun": 80.1, "melee": 90,  "suffix": "%" },
   { "stat": "Damage", "rifle": 165, "shotgun": 164.7, "pistol": 219.6, "archgun": 99.9, "melee": 164.7,  "suffix": "%" },
   { "stat": "Elemental Damage", "rifle": 90, "shotgun": 90, "pistol": 90, "archgun": 119.7, "melee": 90,  "suffix": "%", "noNegative": true },
-  { "stat": "Faction Damage", "rifle": 1.45, "shotgun": 1.45, "pistol": 1.45, "archgun": 1.45, "melee": 1.45,  "suffix": "x" },
+  { "stat": "Faction Damage", "rifle": 0.45, "shotgun": 0.45, "pistol": 0.45, "archgun": 0.45, "melee": 0.45,  "suffix": "x" },
   { "stat": "Finisher Damage", "rifle": null, "shotgun": null, "pistol": null, "archgun": null, "melee": 119.7,  "suffix": "%" },
   { "stat": "Fire Rate / Attack Speed", "rifle": 60.03, "shotgun": 90, "pistol": 74.7, "archgun": 60.03, "melee": 54.9,  "suffix": "%" },
   { "stat": "Projctile Speed", "rifle": 90, "shotgun": 90, "pistol": 90, "archgun": null, "melee": null,  "suffix": "%" },
