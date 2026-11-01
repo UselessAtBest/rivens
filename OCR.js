@@ -688,51 +688,12 @@ var OCR = (function () {
 
     clearBtn.onclick = clearShot;
 
-pasteBox.onclick = async function () {
-    try {
-        var items = await navigator.clipboard.read();
-
-        for (var i = 0; i < items.length; i++) {
-            var imageType = items[i].types.find(function (type) {
-                return type.indexOf("image/") === 0;
-            });
-
-            if (!imageType) continue;
-
-            var blob = await items[i].getType(imageType);
-
-            var file = new File([blob], "screenshot.png", {
-                type: imageType
-            });
-
-            handleImage(file);
-            return;
-        }
-
-        setStatus("No screenshot found in clipboard. Copy an image first.");
-    } catch (err) {
-        console.error("Clipboard access failed:", err);
-        setStatus("Clipboard access blocked. Try Ctrl+V instead.");
-    }
-};
-
-pasteBox.oninput = function () {
-    pasteBox.value = "";
-};
-
-document.addEventListener("paste", function (e) {
-    console.log("PASTE EVENT FIRED", e.clipboardData);
-
+    document.addEventListener("paste", function (e) {
     var items = (e.clipboardData && e.clipboardData.items) || [];
-    console.log("CLIPBOARD ITEMS:", items.length);
 
     for (var i = 0; i < items.length; i++) {
-        console.log("ITEM:", items[i].type);
-
         if (items[i].type.indexOf("image/") === 0) {
             var file = items[i].getAsFile();
-
-            console.log("IMAGE FILE:", file);
 
             if (file) {
                 e.preventDefault();
