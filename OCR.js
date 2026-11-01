@@ -720,23 +720,26 @@ pasteBox.oninput = function () {
     pasteBox.value = "";
 };
 
-    document.addEventListener("paste", function (e) {
-        var items = (e.clipboardData && e.clipboardData.items) || [];
+document.addEventListener("paste", function (e) {
+    var items = (e.clipboardData && e.clipboardData.items) || [];
 
-        for (var i = 0; i < items.length; i++) {
-            if (items[i].type.indexOf("image") === 0) {
-                var f = items[i].getAsFile();
+    for (var i = 0; i < items.length; i++) {
+        if (items[i].type.indexOf("image/") === 0) {
+            var file = items[i].getAsFile();
 
-                if (f) {
-                    e.preventDefault();
-                    handleImage(f);
-                    return;
-                }
+            if (file) {
+                e.preventDefault();
+                handleImage(file);
+                return;
             }
         }
+    }
 
-        if (e.target === pasteBox) e.preventDefault();
-    });
+    if (e.target === pasteBox) {
+        e.preventDefault();
+    }
+});
+
 
     function weaponNote() {
         if (shotWeapon && shotWeapon.name) {
