@@ -22,7 +22,8 @@ var OCR = (function () {
         "Projectile Speed": ["Projectile Speed"],
         "Weapon Recoil": ["Recoil"],
         "Weakpoint Critical Chance": ["Weak Point Critical Chance"],
-        "Weakpoint Damage": ["Weak Point Damage"]
+        "Weakpoint Damage": ["Weak Point Damage"],
+        "Damage" : ["Melee Damage"]
     };
     var GRADE_S = 0.95;
     var GRADE_F = 0.05;
