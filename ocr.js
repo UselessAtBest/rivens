@@ -15,7 +15,7 @@ var OCR = (function () {
     var ALIASES = {
         "Critical Chance On Slide": ["Critical Chance for Slide Attack", "Slide Attack Critical Chance"],
         "Chance to gain Combo Count": ["Chance to Gain Extra Combo Count"],
-        "Elemental Damage": ["Cold", "Heat", "Toxin", "Electricity","Magnetic", "Radiation", "Corrosive", "Blast", "Gas", "Viral"],
+        "Elemental Damage": ["Cold", "Heat", "Toxin", "Electricity", "Magnetic", "Radiation", "Corrosive", "Blast", "Gas", "Viral"],
         "Physical Damage / IPS": ["Impact", "Puncture", "Slash"],
         "Faction Damage": ["Damage to Grineer", "Damage to Corpus", "Damage to Infested", "Damage to Corrupted"],
         "Fire Rate / Attack Speed": ["Fire Rate", "Attack Speed"],
@@ -23,22 +23,27 @@ var OCR = (function () {
         "Weapon Recoil": ["Recoil"],
         "Weakpoint Critical Chance": ["Weak Point Critical Chance"],
         "Weakpoint Damage": ["Weak Point Damage"],
-        "Damage" : ["Melee Damage"]
+        "Damage": ["Melee Damage"],
+        "Reload While Holstered": ["Magazine Reload/s when holstered"]
     };
     var GRADE_S = 0.95;
     var GRADE_F = 0.05;
 
-    var BANDS = [
-        [0.86, "A+"],
-        [0.77, "A"],
-        [0.68, "A-"],
-        [0.59, "B+"],
-        [0.50, "B"],
-        [0.41, "B-"],
-        [0.32, "C+"],
-        [0.23, "C"],
-        [0.14, "C-"]
-    ];
+    // Everything between F and S is split into equal +/- bands.
+    var BAND_GRADES = ["D-", "D", "D+", "C-", "C", "C+", "B-", "B", "B+", "A-", "A", "A+"];
+    var BAND_WIDTH = (GRADE_S - GRADE_F) / BAND_GRADES.length;
+
+    // [lowest t for the grade, grade], best grade first (gradeFor walks this)
+    var BANDS = BAND_GRADES.map(function (g, i) {
+        return [GRADE_F + i * BAND_WIDTH, g];
+    }).reverse();
+
+    // Where each label sits on the grade bar (the middle of its band).
+    var GRADE_MARKS = [{ t: GRADE_F / 2, grade: "F" }]
+        .concat(BAND_GRADES.map(function (g, i) {
+            return { t: GRADE_F + (i + 0.5) * BAND_WIDTH, grade: g };
+        }))
+        .concat([{ t: (GRADE_S + 1) / 2, grade: "S" }]);
 
     var T_SLACK = 0.05;
     var shotLines = null;
@@ -141,7 +146,22 @@ var OCR = (function () {
 
         perLine.forEach(function (segs, i) {
             segs.forEach(function (st, j) {
-                st.cont = (j === segs.length - 1 && i + 1 < lines.length && !perLine[i + 1].length) ? lines[i + 1] : "";
+
+                st.cont = "";
+
+                // Attach ALL following lines that don't contain another stat.
+                if (j === segs.length - 1) {
+                    var continuation = [];
+
+                    for (var n = i + 1; n < lines.length; n++) {
+                        if (perLine[n].length) break;
+
+                        continuation.push(lines[n]);
+                    }
+
+                    st.cont = continuation.join(" ");
+                }
+
                 stats.push(st);
             });
         });
@@ -304,12 +324,26 @@ var OCR = (function () {
             var nm = trimJunk(normalize(line.name));
             var scored = [];
 
-            var variants = [nm];
-            var contWords = normalize(line.cont || "").split(" ").filter(Boolean);
+var variants = [nm];
 
-            for (var k = 1; k <= Math.min(3, contWords.length); k++) {
-                variants.push(trimJunk(normalize(line.name + " " + contWords.slice(0, k).join(" "))));
-            }
+
+var contWords = normalize(line.cont || "")
+    .split(" ")
+    .filter(function (w) {
+        return w.length > 1;
+    });
+
+for (var k = 1; k <= Math.min(8, contWords.length); k++) {
+    variants.push(
+        trimJunk(normalize(
+            nm + " " + contWords.slice(0, k).join(" ")
+        ))
+    );
+}
+
+            if (log) {
+    console.log("OCR candidates:", variants);
+}
 
             cands.forEach(function (c) {
                 var top = 0, topV = nm, topI = 0;
@@ -336,9 +370,11 @@ var OCR = (function () {
                 scored.push({ d: c.d, avail: c.avail, score: top, via: topV, label: c.labels[topI] });
             });
 
-            scored.sort(function (x, y) {
-                return y.score - x.score;
-            });
+scored.sort(function (x, y) {
+    var scoreDiff = y.score - x.score;
+    if (scoreDiff !== 0) return scoreDiff;
+    return (y.via || "").length - (x.via || "").length;
+});
 
             var best = null, off = null, runner = null;
 
@@ -438,7 +474,7 @@ var OCR = (function () {
             if (t >= BANDS[i][0]) return BANDS[i][1];
         }
 
-        return "C-";
+        return "D-";
     }
 
 
@@ -557,27 +593,60 @@ var OCR = (function () {
         }
     }
 
-    function getWorker() {
-        if (typeof Tesseract === "undefined") {
-            return Promise.reject(new Error("Tesseract.js didn't load"));
+    var TESSERACT_URL = "https://cdn.jsdelivr.net/npm/tesseract.js@5.1.1/dist/tesseract.min.js";
+    var tesseractLoad = null;
+
+    // Tesseract.js is only downloaded the first time a screenshot is pasted.
+    function loadTesseract() {
+        if (typeof Tesseract !== "undefined") return Promise.resolve();
+
+        if (!tesseractLoad) {
+            tesseractLoad = new Promise(function (resolve, reject) {
+                var s = document.createElement("script");
+
+                s.src = TESSERACT_URL;
+                s.onload = resolve;
+
+                s.onerror = function () {
+                    s.remove();
+                    tesseractLoad = null;
+                    reject(new Error("Couldn't download Tesseract.js"));
+                };
+
+                document.head.appendChild(s);
+            });
         }
 
+        return tesseractLoad;
+    }
+
+    function getWorker() {
         if (!ocrWorker) {
-            ocrWorker = Tesseract.createWorker("eng", 1, {
-                logger: function (m) {
-                    if (m.status === "recognizing text") {
-                        setStatus("Reading screenshot... " + Math.round(m.progress * 100) + "%");
-                    }
-                }
-            }).then(function (w) {
-                return w.setParameters({
-                    tessedit_pageseg_mode: "6",
-                    preserve_interword_spaces: "1",
-                    tessedit_char_whitelist: OCR_WHITELIST
-                }).then(function () {
-                    return w;
+            setStatus("Downloading OCR engine...");
+
+            ocrWorker = loadTesseract()
+                .then(function () {
+                    return Tesseract.createWorker("eng", 1, {
+                        logger: function (m) {
+                            var pct = Math.round(m.progress * 100) + "%";
+
+                            if (m.status === "loading language traineddata") {
+                                setStatus("Downloading language data... " + pct);
+                            } else if (m.status === "recognizing text") {
+                                setStatus("Reading screenshot... " + pct);
+                            }
+                        }
+                    });
+                })
+                .then(function (w) {
+                    return w.setParameters({
+                        tessedit_pageseg_mode: "6",
+                        preserve_interword_spaces: "1",
+                        tessedit_char_whitelist: OCR_WHITELIST
+                    }).then(function () {
+                        return w;
+                    });
                 });
-            });
 
             ocrWorker.catch(function () {
                 ocrWorker = null;
@@ -694,20 +763,20 @@ var OCR = (function () {
     clearBtn.onclick = clearShot;
 
     document.addEventListener("paste", function (e) {
-    var items = (e.clipboardData && e.clipboardData.items) || [];
+        var items = (e.clipboardData && e.clipboardData.items) || [];
 
-    for (var i = 0; i < items.length; i++) {
-        if (items[i].type.indexOf("image/") === 0) {
-            var file = items[i].getAsFile();
+        for (var i = 0; i < items.length; i++) {
+            if (items[i].type.indexOf("image/") === 0) {
+                var file = items[i].getAsFile();
 
-            if (file) {
-                e.preventDefault();
-                handleImage(file);
-                return;
+                if (file) {
+                    e.preventDefault();
+                    handleImage(file);
+                    return;
+                }
             }
         }
-    }
-});
+    });
 
 
     function weaponNote() {
@@ -781,6 +850,7 @@ var OCR = (function () {
         onChange: function () { },
         onDetect: function () { },
         active: function () { return shotLines !== null; },
+        gradeMarks: GRADE_MARKS,
         rows: rows
     };
 

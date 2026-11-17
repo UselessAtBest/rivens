@@ -9,12 +9,12 @@
     box-sizing: border-box;
     padding-top: env(safe-area-inset-top, 0px);
     padding-bottom: env(safe-area-inset-bottom, 0px);
+    --riven: linear-gradient(90deg,#4d2c8f,#9572b4,#dba4ff,white,#dba4ff,#9572b4,#4d2c8f);
 }
 
 @media (prefers-color-scheme: dark) {
-    :root:not([data-theme="light"]) {
+    :root {
         --bg: linear-gradient(120deg, #100d16, #413063, #1c1336);
-        --oldsurface: #302550;
         --ink: #e8eee9;
         --muted: #543c9c;
         --line: #49387c;
@@ -22,22 +22,10 @@
         --accent-ink: #fff;
         color-scheme: dark;
         --surface: #3025508c;
-        --title: #594594;
     }
 }
 
-:root[data-theme="dark"] {
-    --bg: #141a17;
-    --surface: #1c2420;
-    --ink: #e8eee9;
-    --muted: #93a199;
-    --line: #33403a;
-    --accent: #5bc59c;
-    --accent-ink: #0d1a14;
-    color-scheme: dark;
-}
-
-* {
+*, *::before, *::after {
     box-sizing: border-box;
 }
 
@@ -50,7 +38,7 @@ body {
     margin: 0;
     background: var(--bg);
     color: var(--ink);
-    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font: 16px/1.5 "Open Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     height: fit-content;
     min-height: 100vh;
     background-attachment: fixed;
@@ -65,7 +53,7 @@ main {
 
 h1 {
     font-size: 3rem;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: "Open Sans", sans-serif;
     font-weight: 900;
     display: flex;
     justify-content: center;
@@ -97,11 +85,6 @@ h1 {
     }
 }
 
-p.sub {
-    margin: 0 0 20px;
-    color: var(--muted);
-}
-
 h2 {
     font-size: .95rem;
     margin: 20px 0 8px;
@@ -117,6 +100,7 @@ h2 {
 
 .btn {
     font: inherit;
+    font-family: "Open Sans", sans-serif;
     padding: 9px 16px;
     border: 1px solid var(--line);
     border-radius: 35px;
@@ -144,21 +128,10 @@ h2 {
     font-weight: bold;
 }
 
-.btn small {
-    color: var(--muted);
-    margin-left: 6px;
-    font-size: .78rem;
-}
-
 .btn[aria-pressed="true"] {
     background: var(--accent);
     border-color: var(--accent);
     color: var(--accent-ink);
-}
-
-.btn[aria-pressed="true"] small {
-    color: inherit;
-    opacity: .85;
 }
 
 :focus-visible {
@@ -177,11 +150,16 @@ input.paste {
     flex: 1;
     min-width: 0;
     font: inherit;
+    font-family: "Open Sans", sans-serif;
     padding: 10px 12px;
     border: 1px solid var(--line);
     border-radius: 10px;
     background: var(--surface);
     color: var(--ink);
+}
+
+input.paste {
+    pointer-events: none;
 }
 
 .count {
@@ -221,13 +199,6 @@ li span:last-child {
     white-space: nowrap;
 }
 
-li em {
-    color: var(--muted);
-    font-style: normal;
-    font-size: .85rem;
-    margin-left: 8px;
-}
-
 .empty {
     padding: 18px 16px;
     color: var(--muted);
@@ -262,8 +233,22 @@ h2 + .tools {
     max-width: 100%;
     max-height: 360px;
     margin: 0 auto 8px;
-    border: 1px solid var(--line);
-    border-radius: 12px;
+    border: 6.7px solid transparent;
+    border-radius: 30px;
+    background:
+        linear-gradient(var(--surface), var(--surface)) padding-box,
+        var(--riven) border-box;
+    background-size: 100% 100%, 200% 100%;
+    animation: border-flow 2s linear infinite;
+}
+
+@keyframes border-flow {
+    from {
+        background-position: 0 0, 0% 0;
+    }
+    to {
+        background-position: 0 0, 200% 0;
+    }
 }
 
 .btn:disabled {
@@ -297,26 +282,29 @@ h2 + .tools {
     white-space: nowrap;
 }
 
-/* Keep the maximum value on the same line */
 .stat-line > span:last-child {
     white-space: nowrap;
 }
+
 .stat-row {
     display: flex;
     flex-direction: column;
     gap: 7px;
     width: 100%;
+    align-items:center
 }
 
-/* Compact red → yellow → green grading bar */
+
+
 .grade-track {
     width: 100%;
     padding-top: 2px;
 }
 
 .grade-bar {
+    margin-left:4%;
     position: relative;
-    width: 100%;
+    width: 92%;
     height: 9px;
     border-radius: 20px;
     background: linear-gradient(
@@ -327,7 +315,6 @@ h2 + .tools {
     );
 }
 
-/* Percentage label sits over the bar and samples the same gradient as JS */
 .grade-marker {
     position: absolute;
     top: 50%;
@@ -346,8 +333,9 @@ h2 + .tools {
 
 .grade-labels {
     position: relative;
+    width: 92%;
     height: 16px;
-    margin-top: 5px;
+    margin: 5px 0 0 4%;
     font-size: 10px;
     font-weight: 700;
     opacity: 0.7;
@@ -357,4 +345,44 @@ h2 + .tools {
     position: absolute;
     transform: translateX(-50%);
     white-space: nowrap;
+}
+
+/* Rolling odometer digits. Motion comes from script.js (Web Animations API). */
+
+.odometer {
+    display: inline-flex;
+    align-items: center;
+    white-space: nowrap;
+    font-family: "Open Sans", sans-serif;
+    font-variant-numeric: tabular-nums;
+    font-feature-settings: "tnum";
+}
+
+.odo-digit {
+    display: inline-block;
+    position: relative;
+    height: 1em;
+    overflow: hidden;
+    vertical-align: baseline;
+    text-align: center;
+    line-height: 1em;
+}
+
+.odo-strip {
+    display: flex;
+    flex-direction: column;
+    will-change: transform;
+}
+
+.odo-strip > span {
+    display: block;
+    flex: 0 0 1em;
+    height: 1em;
+    line-height: 1em;
+    text-align: center;
+}
+
+.odo-fixed {
+    display: inline-block;
+    white-space: pre;
 }

@@ -71,7 +71,6 @@ function fmt(n) {
     return (Math.round(n * 100) / 100).toString();
 }
 
-
 function gradeColour(t) {
     t = Math.max(0, Math.min(1, Number(t) || 0));
 
@@ -165,7 +164,6 @@ makeGroup(
     }
 );
 
-
 var altBtn = document.createElement("button");
 
 altBtn.type = "button";
@@ -183,8 +181,12 @@ altBtn.onclick = function () {
 
 mults.appendChild(altBtn);
 
-q.oninput = render;
+var searchTimer = null;
 
+q.oninput = function () {
+    clearTimeout(searchTimer);
+    searchTimer = setTimeout(render, 120);
+};
 
 function playEnter(items) {
     if (REDUCED || !items.length || !items[0].animate) return;
@@ -278,28 +280,127 @@ function nextLive(node) {
     return node;
 }
 
+var ODO_LEG = 260;          // ms for one leg of the roll
+var ODO_STAGGER = 120;      // ms between neighbouring digits
+var ODO_EASE = "cubic-bezier(.45, 0, .25, 1)";
 
-function fillRow(el, r) {
-    el.innerHTML = "";
+function buildOdometer(el, value) {
+    var strips = [];
 
+    el.textContent = "";
+    el.classList.add("odometer");
+
+    value.split("").forEach(function (char) {
+        if (/\d/.test(char)) {
+            var windowEl = document.createElement("span");
+            windowEl.className = "odo-digit";
+
+            var strip = document.createElement("span");
+            strip.className = "odo-strip";
+            strip.setAttribute("aria-hidden", "true");
+
+            for (var n = 0; n <= 9; n++) {
+                var digit = document.createElement("span");
+                digit.textContent = n;
+                strip.appendChild(digit);
+            }
+
+            windowEl.appendChild(strip);
+            el.appendChild(windowEl);
+            strips.push(strip);
+        } else {
+            var fixed = document.createElement("span");
+            fixed.className = "odo-fixed";
+            fixed.textContent = char;
+            el.appendChild(fixed);
+        }
+    });
+
+    return strips;
+}
+
+// Rolls one digit strip: from -> 0 -> to (skipping a leg if it starts or ends on 0).
+function rollStrip(strip, from, to, delay) {
+    strip.style.transform = "translateY(-" + to + "em)";
+
+    if (strip._anim) {
+        strip._anim.cancel();
+        strip._anim = null;
+    }
+
+    if (REDUCED || !strip.animate || from === to) return;
+
+    var frames = [{
+        transform: "translateY(-" + from + "em)",
+        easing: ODO_EASE
+    }];
+
+    if (from !== 0 && to !== 0) {
+        frames.push({
+            transform: "translateY(0em)",
+            easing: ODO_EASE
+        });
+    }
+
+    frames.push({ transform: "translateY(-" + to + "em)" });
+
+    strip._anim = strip.animate(frames, {
+        duration: ODO_LEG * (frames.length - 1),
+        delay: delay,
+        fill: "backwards"
+    });
+}
+
+function setOdometer(el, value) {
+    value = String(value);
+
+    var prev = el._odo;
+
+    // Same text as last time: leave it alone (no rebuild, no animation).
+    if (prev && prev.value === value) return;
+
+    var shape = value.replace(/\d/g, "#");
+    var digits = value.replace(/\D/g, "").split("").map(Number);
+    var strips, from;
+
+    if (prev && prev.shape === shape) {
+        // Same layout: reuse the strips and roll from what they show now.
+        strips = prev.strips;
+        from = prev.digits;
+    } else {
+        // First render or the layout changed (sign, suffix, digit count).
+        strips = buildOdometer(el, value);
+
+        from = digits.map(function (d, i) {
+            return prev && prev.digits[i] !== undefined ? prev.digits[i] : 0;
+        });
+    }
+
+    el.setAttribute("aria-label", value);
+
+    var order = 0;
+
+    digits.forEach(function (to, i) {
+        rollStrip(strips[i], from[i], to, order * ODO_STAGGER);
+
+        if (from[i] !== to) order++;
+    });
+
+    el._odo = { value: value, shape: shape, digits: digits, strips: strips };
+}
+
+function buildRow(el) {
     var line = document.createElement("div");
     line.className = "stat-line";
 
     var min = document.createElement("span");
     min.className = "stat-min";
-    min.textContent = r.minText || fmtSigned(r.low, "");
 
     var name = document.createElement("span");
     name.className = "stat-name";
-    name.textContent = r.name;
-
-    var read = document.createElement("span");
-    read.className = "stat-read";
-    read.textContent = r.read || "";
 
     var max = document.createElement("span");
     max.className = "stat-max";
-    max.textContent = r.maxText || fmtSigned(r.high, "");
 
     line.appendChild(min);
     line.appendChild(name);
@@ -307,53 +408,64 @@ function fillRow(el, r) {
 
     el.appendChild(line);
 
+    return { min: min, name: name, max: max, track: null, marker: null };
+}
+
+function buildGradeTrack(ui) {
+    var track = document.createElement("div");
+    track.className = "grade-track";
+
+    var bar = document.createElement("div");
+    bar.className = "grade-bar";
+
+    var marker = document.createElement("div");
+    marker.className = "grade-marker";
+
+    bar.appendChild(marker);
+    track.appendChild(bar);
+
+    var labels = document.createElement("div");
+    labels.className = "grade-labels";
+
+    var marks = (window.OCR && OCR.gradeMarks) || [];
+
+    marks.forEach(function (item) {
+        var span = document.createElement("span");
+        span.textContent = item.grade;
+        span.style.left = (item.t * 100) + "%";
+        labels.appendChild(span);
+    });
+
+    track.appendChild(labels);
+
+    ui.track = track;
+    ui.marker = marker;
+}
+
+function fillRow(el, r) {
+    var ui = el._ui || (el._ui = buildRow(el));
+
+    if (ui.name.textContent !== r.name) ui.name.textContent = r.name;
+
+    setOdometer(ui.min, r.minText || fmtSigned(r.low, ""));
+    setOdometer(ui.max, r.maxText || fmtSigned(r.high, ""));
+
     if (r.grade && r.t !== undefined) {
-        var track = document.createElement("div");
-        track.className = "grade-track";
+        if (!ui.track) buildGradeTrack(ui);
 
-        var bar = document.createElement("div");
-        bar.className = "grade-bar";
+        if (!ui.track.parentNode) el.appendChild(ui.track);
 
-        var marker = document.createElement("div");
-        marker.className = "grade-marker";
-
-        marker.textContent = r.read || "";
-        marker.style.left = (r.t * 100) + "%";
-        marker.style.backgroundColor = gradeColour(r.t);
-
-        bar.appendChild(marker);
-        track.appendChild(bar);
-
-        var labels = document.createElement("div");
-        labels.className = "grade-labels";
-
-        var gradeMarks = [
-            { t: 0.05, grade: "F" },
-            { t: 0.14, grade: "C-" },
-            { t: 0.23, grade: "C" },
-            { t: 0.32, grade: "C+" },
-            { t: 0.41, grade: "B-" },
-            { t: 0.50, grade: "B" },
-            { t: 0.59, grade: "B+" },
-            { t: 0.68, grade: "A-" },
-            { t: 0.77, grade: "A" },
-            { t: 0.86, grade: "A+" },
-            { t: 0.95, grade: "S" }
-        ];
-
-        gradeMarks.forEach(function (item) {
-            var span = document.createElement("span");
-            span.textContent = item.grade;
-            span.style.left = (item.t * 100) + "%";
-            labels.appendChild(span);
-        });
-
-        track.appendChild(labels);
-        el.appendChild(track);
+        ui.marker.textContent = r.read || "";
+        ui.marker.style.left = (r.t * 100) + "%";
+        ui.marker.style.backgroundColor = gradeColour(r.t);
 
         el.classList.add("graded");
         el.setAttribute("data-grade", r.grade);
     } else {
+        if (ui.track && ui.track.parentNode) {
+            ui.track.parentNode.removeChild(ui.track);
+        }
+
         el.classList.remove("graded");
         el.removeAttribute("data-grade");
     }
@@ -494,7 +606,6 @@ function render() {
     playEnter(entering);
 }
 
-
 if (window.OCR) {
     OCR.onChange = render;
 
@@ -505,7 +616,6 @@ if (window.OCR) {
         }
     };
 }
-
 
 fetch("data.json")
     .then(function (r) {
